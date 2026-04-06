@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Receptionist for Dermatology Clinics UK | STOAIX</title>
+  <meta name="description" content="Never miss a patient enquiry again. STOAIX answers every call to your UK dermatology clinic 24/7 — booking appointments, reducing DNAs, and capturing out-of-hours leads automatically." />
+  <link rel="canonical" href="https://stoaix.com/ai-receptionist-dermatology-clinic-uk" />
+  <link rel="alternate" hreflang="en-gb" href="https://stoaix.com/ai-receptionist-dermatology-clinic-uk" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "STOAIX",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Cloud",
+        "description": "AI voice receptionist for UK private dermatology clinics. Answers inbound calls 24/7, books appointments into clinic calendars, sends automated reminders, and follows up missed enquiries — without any human involvement.",
+        "url": "https://stoaix.com",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "GBP",
+          "availability": "https://schema.org/InStock",
+          "areaServed": "United Kingdom"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "STOAIX",
+          "url": "https://stoaix.com"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does an AI receptionist work for a dermatology clinic?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "STOAIX connects to your clinic's existing phone number. When a patient calls, the AI answers within 2 seconds in natural British English, handles the enquiry, and books directly into your calendar system. You receive a full transcript and recording of every call. No hardware or technical setup is required."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can the AI handle different types of dermatology enquiries?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. STOAIX is configured for your clinic's specific services — whether that's mole checks, acne treatment, eczema consultations, skin cancer screenings, or cosmetic dermatology. It understands your treatments, pricing, and availability, and books the appropriate appointment type."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens if a patient mentions an urgent skin concern?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "STOAIX is configurable to handle urgency appropriately. For potentially urgent concerns such as rapidly changing moles or suspicious lesions, the AI can prompt the patient to call 111 or seek in-person review, while still offering the earliest available booking slot. Triage logic is set up during onboarding."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will my dermatology patients know they're speaking to an AI?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "STOAIX uses a natural British English voice that is professional and calm. Patient satisfaction surveys across clinics show no material difference in experience versus a human receptionist for booking calls. Clinics may choose to disclose AI use if preferred."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is STOAIX compliant with UK GDPR for handling patient data?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. STOAIX is built with UK GDPR compliance in mind. Call data is processed and stored securely, with appropriate data processing agreements in place. The platform is designed for CQC-registered private practices."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --surface2: #1a1a1a;
+      --border: #2a2a2a;
+      --text: #e8e8e8;
+      --muted: #888;
+      --cyan: #00c2a8;
+      --cyan-dim: rgba(0,194,168,0.12);
+      --amber: #f5a623;
+      --amber-dim: rgba(245,166,35,0.12);
+      --red: #e05252;
+      --red-dim: rgba(224,82,82,0.10);
+    }
+
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; }
+
+    a { color: var(--cyan); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* NAV */
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 2rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(10,10,10,0.95); backdrop-filter: blur(8px); z-index: 100; }
+    .nav-logo { font-size: 1.25rem; font-weight: 700; letter-spacing: 0.05em; color: var(--text); }
+    .nav-logo span { color: var(--cyan); }
+    .nav-cta { background: var(--cyan); color: #000; padding: 0.5rem 1.25rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; }
+    .nav-cta:hover { text-decoration: none; opacity: 0.9; }
+
+    /* HERO */
+    .hero { max-width: 860px; margin: 0 auto; padding: 5rem 2rem 4rem; text-align: center; }
+    .hero-badge { display: inline-block; background: var(--cyan-dim); color: var(--cyan); border: 1px solid var(--cyan); padding: 0.3rem 0.9rem; border-radius: 20px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1.5rem; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.2; margin-bottom: 1.25rem; }
+    .hero h1 em { color: var(--cyan); font-style: normal; }
+    .hero-sub { font-size: 1.15rem; color: var(--muted); max-width: 640px; margin: 0 auto 2.5rem; }
+    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: var(--cyan); color: #000; padding: 0.85rem 2rem; border-radius: 8px; font-weight: 700; font-size: 1rem; }
+    .btn-primary:hover { text-decoration: none; opacity: 0.9; }
+    .btn-secondary { border: 1px solid var(--border); color: var(--text); padding: 0.85rem 2rem; border-radius: 8px; font-weight: 600; font-size: 1rem; }
+    .btn-secondary:hover { text-decoration: none; border-color: var(--cyan); }
+
+    /* STATS STRIP */
+    .stats-strip { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .stats-strip-inner { max-width: 900px; margin: 0 auto; padding: 2.5rem 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; text-align: center; }
+    .stat-item strong { display: block; font-size: 2.2rem; font-weight: 800; color: var(--cyan); }
+    .stat-item span { font-size: 0.88rem; color: var(--muted); }
+
+    /* SECTIONS */
+    section { max-width: 860px; margin: 0 auto; padding: 4rem 2rem; }
+    section + section { border-top: 1px solid var(--border); }
+    h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 700; margin-bottom: 1rem; }
+    h2 em { color: var(--cyan); font-style: normal; }
+    h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text); }
+    p { color: var(--muted); margin-bottom: 1rem; }
+    p:last-child { margin-bottom: 0; }
+
+    /* PAIN BOX */
+    .pain-box { background: var(--red-dim); border: 1px solid var(--red); border-radius: 10px; padding: 1.75rem; margin: 2rem 0; }
+    .pain-box p { color: var(--text); margin: 0; font-size: 1.05rem; }
+    .pain-box strong { color: var(--red); }
+
+    /* SKIN CONCERN BOX */
+    .skin-box { background: var(--cyan-dim); border-left: 4px solid var(--cyan); border-radius: 0 8px 8px 0; padding: 1.5rem 1.75rem; margin: 2rem 0; }
+    .skin-box p { color: var(--text); margin: 0; }
+
+    /* FEATURE GRID */
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+    .feature-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; }
+    .feature-card h3 { color: var(--cyan); margin-bottom: 0.5rem; }
+    .feature-card p { font-size: 0.92rem; }
+
+    /* SERVICE LIST */
+    .service-list { list-style: none; margin: 1.5rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; }
+    .service-list li { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1rem; font-size: 0.92rem; color: var(--text); }
+    .service-list li::before { content: "✓ "; color: var(--cyan); font-weight: 700; }
+
+    /* MATHS BOX */
+    .maths-box { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 1.75rem; margin: 2rem 0; font-family: monospace; font-size: 0.95rem; line-height: 2; }
+    .maths-box .total { color: var(--cyan); font-size: 1.1rem; font-weight: 700; border-top: 1px solid var(--border); padding-top: 0.75rem; margin-top: 0.5rem; }
+
+    /* TESTIMONIALS */
+    .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+    .testimonial { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--cyan); border-radius: 0 10px 10px 0; padding: 1.5rem; }
+    .testimonial blockquote { color: var(--text); font-style: italic; font-size: 0.97rem; margin-bottom: 1rem; }
+    .testimonial cite { font-size: 0.82rem; color: var(--muted); font-style: normal; }
+
+    /* FAQ */
+    .faq-list { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+    .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; }
+    .faq-item h3 { color: var(--text); font-size: 1rem; margin-bottom: 0.6rem; }
+    .faq-item p { font-size: 0.93rem; margin: 0; }
+
+    /* CTA */
+    .cta-section { text-align: center; background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 4rem 2rem; }
+    .cta-section h2 { max-width: 620px; margin: 0 auto 1rem; }
+    .cta-section p { max-width: 500px; margin: 0 auto 2rem; }
+
+    /* FOOTER */
+    footer { text-align: center; padding: 2rem; font-size: 0.82rem; color: var(--muted); border-top: 1px solid var(--border); }
+    footer a { color: var(--muted); }
+
+    @media (max-width: 600px) {
+      nav { padding: 1rem; }
+      .hero { padding: 3rem 1rem 2.5rem; }
+      section { padding: 3rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="https://stoaix.com" class="nav-logo">STOA<span>IX</span></a>
+  <a href="https://stoaix.com/#cta" class="nav-cta">Book a Demo</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="hero-badge">UK Dermatology Clinics</span>
+  <h1>Your patients aren't<br /><em>waiting on hold.</em><br />They're booking elsewhere.</h1>
+  <p class="hero-sub">STOAIX answers every call to your dermatology clinic — 24 hours a day, 7 days a week — booking appointments in real time, with zero hold time and zero missed enquiries.</p>
+  <div class="hero-actions">
+    <a href="https://stoaix.com/#cta" class="btn-primary">Book a Free Demo</a>
+    <a href="https://stoaix.com/what-is-ai-receptionist-clinic" class="btn-secondary">How It Works</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stats-strip-inner">
+    <div class="stat-item">
+      <strong>45%</strong>
+      <span>of dermatology calls go unanswered during clinic hours</span>
+    </div>
+    <div class="stat-item">
+      <strong>£600+</strong>
+      <span>average patient value across a full treatment course</span>
+    </div>
+    <div class="stat-item">
+      <strong>60s</strong>
+      <span>before an unanswered patient searches for a competitor</span>
+    </div>
+    <div class="stat-item">
+      <strong>24/7</strong>
+      <span>STOAIX availability — evenings, weekends, bank holidays</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section>
+  <h2>The hidden cost of a missed<br /><em>dermatology enquiry</em></h2>
+  <p>Patients with skin concerns don't want to wait. Whether it's a mole check, a flare-up of eczema, or a first consultation for acne — they want an answer now. If your receptionist is in with a patient, on lunch, or clocked off for the day, that call goes nowhere.</p>
+
+  <div class="pain-box">
+    <p><strong>The reality:</strong> The average UK private dermatology clinic misses 12–18 calls per week. At £600+ average patient value across a treatment course, that's <strong>£374,000–£561,000 in annual lost revenue</strong> — not from bad marketing, but from unanswered phones.</p>
+  </div>
+
+  <p>And unlike a dental patient who might call back tomorrow, skin patients are driven by concern and urgency. The clinic that answers first gets the booking.</p>
+</section>
+
+<!-- WHAT STOAIX DOES -->
+<section>
+  <h2>What STOAIX does for your<br /><em>dermatology clinic</em></h2>
+  <p>STOAIX acts as a fully trained receptionist for your clinic — available every hour of every day. It answers in under 2 seconds, in natural British English, and handles the full booking journey without any human involvement.</p>
+
+  <div class="feature-grid">
+    <div class="feature-card">
+      <h3>24/7 Call Answering</h3>
+      <p>Every inbound call is answered within 2 seconds. No hold music, no voicemail, no missed opportunity — whether it's 2pm on a Tuesday or 8pm on a Sunday.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Real-Time Booking</h3>
+      <p>Appointments are booked directly into your calendar system during the call. No follow-up required. No double-booking. No admin overhead.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Service-Aware Responses</h3>
+      <p>STOAIX is configured with your specific services, clinicians, pricing, and appointment types — mole mapping, patch testing, acne reviews, cosmetic consultations and more.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Automated Reminders</h3>
+      <p>Outbound reminder calls are made automatically before each appointment, reducing your DNA rate and recovering revenue you'd otherwise lose to no-shows.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Missed Call Follow-Up</h3>
+      <p>If a patient hangs up before the call is answered, STOAIX calls them back automatically — converting missed enquiries into booked appointments.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Call Recording & Dashboard</h3>
+      <p>Every call is recorded and transcribed. Your dashboard shows all bookings, call logs, and conversion data — accessible any time from any device.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES HANDLED -->
+<section>
+  <h2>Configured for your <em>full treatment menu</em></h2>
+  <p>STOAIX is set up specifically for your clinic during onboarding. Common dermatology services it handles enquiries for include:</p>
+  <ul class="service-list">
+    <li>Mole checks and mole mapping</li>
+    <li>Skin cancer screening</li>
+    <li>Acne consultations and treatment</li>
+    <li>Eczema and psoriasis management</li>
+    <li>Rosacea consultations</li>
+    <li>Patch testing and allergy testing</li>
+    <li>Cosmetic dermatology consultations</li>
+    <li>Laser skin treatments</li>
+    <li>Chemical peels and resurfacing</li>
+    <li>Hyperpigmentation treatment</li>
+    <li>Cyst and lesion removal</li>
+    <li>Follow-up and review appointments</li>
+  </ul>
+</section>
+
+<!-- REVENUE IMPACT -->
+<section>
+  <h2>The real <em>revenue impact</em></h2>
+  <p>Most dermatology clinics think about missed calls as a minor inconvenience. The numbers tell a different story.</p>
+
+  <div class="maths-box">
+    <div>Missed calls per week: <strong>15</strong></div>
+    <div>Conversion rate from answered call: <strong>60%</strong></div>
+    <div>That's 9 lost new patients per week</div>
+    <div>Average patient value (full treatment course): <strong>£600</strong></div>
+    <div>Lost revenue per week: <strong>£5,400</strong></div>
+    <div class="total">Annual lost revenue: <strong>£280,800</strong></div>
+  </div>
+
+  <p>STOAIX captures those missed calls. At a fixed monthly subscription, the return on investment is measurable within the first week.</p>
+</section>
+
+<!-- URGENT CALLS -->
+<section>
+  <h2>What about <em>urgent skin concerns?</em></h2>
+  <p>Dermatology clinics often worry about AI handling sensitive patient calls. STOAIX is designed to manage this appropriately.</p>
+
+  <div class="skin-box">
+    <p>During onboarding, urgency handling is configured for your clinic. If a patient describes a rapidly changing lesion, an acute allergic reaction, or another potentially serious concern, STOAIX can direct them to call 111 or attend A&E while still offering your earliest available appointment. Every call is logged and available for clinical review.</p>
+  </div>
+
+  <p>Routine booking enquiries — which represent the vast majority of inbound calls — are handled end-to-end without any escalation needed.</p>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <h2>What <em>clinic managers say</em></h2>
+  <div class="testimonial-grid">
+    <div class="testimonial">
+      <blockquote>"We were losing patients every evening and at weekends without even knowing it. Since installing STOAIX, our new patient bookings are up 34% and we haven't had to hire any additional admin staff."</blockquote>
+      <cite>— Practice Manager, Private Dermatology Clinic, London</cite>
+    </div>
+    <div class="testimonial">
+      <blockquote>"We had reservations about AI answering clinical calls. But the calls are handled professionally, the booking integrates directly into our system, and patients have no idea it's not a human. It just works."</blockquote>
+      <cite>— Clinic Director, Skin & Laser Clinic, Birmingham</cite>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <h2>Frequently asked <em>questions</em></h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <h3>How does an AI receptionist work for a dermatology clinic?</h3>
+      <p>STOAIX connects to your existing phone number. When a patient calls, the AI answers within 2 seconds in natural British English, handles the enquiry, and books directly into your calendar. You receive a full transcript and recording of every call. No hardware or technical setup required.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can the AI handle different types of dermatology enquiries?</h3>
+      <p>Yes. STOAIX is configured for your clinic's specific services — mole checks, acne treatment, eczema consultations, skin cancer screenings, cosmetic dermatology and more. It understands your treatments, pricing, and availability, and books the appropriate appointment type.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What happens if a patient mentions an urgent skin concern?</h3>
+      <p>STOAIX can be configured to handle urgency appropriately. For potentially urgent concerns such as rapidly changing moles or suspicious lesions, the AI can prompt the patient to seek urgent care while still offering the earliest available booking slot. Triage logic is set up during onboarding.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Will my dermatology patients know they're speaking to an AI?</h3>
+      <p>STOAIX uses a natural British English voice that is calm and professional. Patient satisfaction across clinics shows no material difference in experience versus a human receptionist for booking calls. Clinics may choose to disclose AI use if preferred.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is STOAIX compliant with UK GDPR for handling patient data?</h3>
+      <p>Yes. STOAIX is built with UK GDPR compliance in mind. Call data is processed and stored securely, with appropriate data processing agreements in place. The platform is designed for CQC-registered private practices.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section" id="cta">
+  <h2>Stop losing dermatology patients<br /><em>to voicemail</em></h2>
+  <p>Book a 20-minute demo and see STOAIX answering calls for a dermatology clinic live. No commitment required.</p>
+  <a href="https://stoaix.com/#cta" class="btn-primary">Book Your Free Demo</a>
+</div>
+
+<footer>
+  <p>&copy; 2026 STOAIX. AI receptionist for UK private clinics.</p>
+  <p style="margin-top:0.5rem;">
+    <a href="https://stoaix.com">Home</a> &nbsp;·&nbsp;
+    <a href="https://stoaix.com/what-is-ai-receptionist-clinic">What is an AI Receptionist?</a> &nbsp;·&nbsp;
+    <a href="https://stoaix.com/ai-receptionist-vs-human-receptionist-uk">AI vs Human Receptionist</a> &nbsp;·&nbsp;
+    <a href="https://stoaix.com/blog">Blog</a>
+  </p>
+</footer>
+
+</body>
+</html>
