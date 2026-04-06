@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — AI for Private Clinics | STOAIX</title>
+<meta name="description" content="Guides, insights, and strategies for UK private clinic owners. Learn how to fill appointment slots, reduce no-shows, and grow your practice with AI.">
+<link rel="canonical" href="https://stoaix.com/blog">
+<meta property="og:title" content="Blog — AI for Private Clinics | STOAIX">
+<meta property="og:description" content="Guides and insights for UK private clinic owners. Reduce no-shows, recover missed calls, and grow your practice.">
+<meta property="og:url" content="https://stoaix.com/blog">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,400;0,600;0,700;0,900;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#050a30;--blue:#233dff;--cyan:#42c2d5;--light:#f4f6fc;--white:#ffffff;--muted:#6b7a99;--border:rgba(35,61,255,0.1);--text:#0d1545;--text-soft:#4a5480}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--light);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 48px;display:flex;justify-content:space-between;align-items:center;background:rgba(244,246,252,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.brand{font-family:'Anybody',sans-serif;font-weight:900;font-size:22px;letter-spacing:-0.5px;color:var(--navy);text-decoration:none}
+.brand span{color:var(--blue)}
+.nav-btn{background:var(--blue);color:#fff;padding:10px 24px;border-radius:100px;font-family:'Anybody',sans-serif;font-weight:700;font-size:13px;text-decoration:none}
+.hero{padding:120px 48px 60px;background:linear-gradient(135deg,#eef1ff 0%,var(--light) 60%);border-bottom:1px solid var(--border)}
+.hero-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:14px;font-weight:600}
+.hero h1{font-family:'Anybody',sans-serif;font-size:clamp(36px,5vw,64px);font-weight:900;letter-spacing:-3px;line-height:.95;color:var(--navy);margin-bottom:20px}
+.hero h1 em{font-style:italic;color:var(--blue)}
+.hero p{font-size:18px;color:var(--text-soft);max-width:540px;line-height:1.65}
+.blog-section{padding:80px 48px}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1200px;margin:0 auto}
+.blog-card{background:#fff;border:1.5px solid var(--border);border-radius:20px;padding:32px 28px;transition:all .3s;text-decoration:none;display:flex;flex-direction:column}
+.blog-card:hover{border-color:rgba(35,61,255,0.3);transform:translateY(-4px);box-shadow:0 16px 40px rgba(35,61,255,0.08)}
+.card-tag{display:inline-block;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);background:rgba(66,194,213,0.12);padding:4px 10px;border-radius:100px;margin-bottom:16px;border:1px solid rgba(66,194,213,0.25);font-weight:600;width:fit-content}
+.card-title{font-family:'Anybody',sans-serif;font-size:18px;font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:12px}
+.card-excerpt{font-size:14px;color:var(--text-soft);line-height:1.65;flex:1;margin-bottom:20px}
+.card-meta{font-size:12px;color:var(--muted);border-top:1px solid var(--border);padding-top:14px;margin-top:auto}
+.empty-state{grid-column:1/-1;text-align:center;padding:80px 20px;color:var(--muted)}
+.empty-state h3{font-family:'Anybody',sans-serif;font-size:24px;font-weight:800;color:var(--navy);margin-bottom:12px}
+.cta-strip{background:var(--navy);padding:80px 48px;text-align:center}
+.cta-strip h2{font-family:'Anybody',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:900;letter-spacing:-2px;color:#fff;margin-bottom:16px}
+.cta-strip h2 em{font-style:italic;color:var(--cyan)}
+.cta-strip p{color:rgba(244,246,252,0.5);font-size:16px;margin-bottom:36px}
+.cta-strip a{background:var(--cyan);color:var(--navy);padding:16px 36px;border-radius:100px;font-family:'Anybody',sans-serif;font-weight:900;font-size:15px;text-decoration:none;display:inline-block}
+footer{padding:36px 48px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;background:var(--light)}
+footer p{font-size:13px;color:var(--muted)}
+footer a{color:var(--blue);text-decoration:none}
+@media(max-width:900px){nav,footer,.hero,.blog-section,.cta-strip{padding-left:20px;padding-right:20px}.blog-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="/">STOA<span>IX</span></a>
+  <a class="nav-btn" href="/#cta">Book a Demo</a>
+</nav>
+
+<div class="hero">
+  <p class="hero-label">Resources</p>
+  <h1>Grow your clinic.<br><em>Without the overhead.</em></h1>
+  <p>Guides and insights for UK private clinic owners. From reducing no-shows to recovering missed calls — practical, numbers-first advice.</p>
+</div>
+
+<div class="blog-section">
+  <div class="blog-grid" id="articles">
+    <!-- Articles will be added here by /publish-static command -->
+    <div class="empty-state">
+      <h3>Articles coming soon</h3>
+      <p>We're publishing guides on clinic growth, patient acquisition, and AI for UK private practices.</p>
+    </div>
+  </div>
+</div>
+
+<div class="cta-strip">
+  <h2>See STOAIX <em>in action</em></h2>
+  <p>15 minutes. We'll demo the voice agent live — no commitment needed.</p>
+  <a href="https://stoaix.com/#cta">Book a Free Demo</a>
+</div>
+
+<footer>
+  <p>© 2026 STOAIX. AI infrastructure for private clinics.</p>
+  <p><a href="/">stoaix.com</a></p>
+</footer>
+
+</body>
+</html>
