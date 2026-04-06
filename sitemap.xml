@@ -125,6 +125,23 @@
     <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/ai-receptionist-vs-answering-service-uk"/>
   </url>
 
+  <!-- Pain / Intent Pages (EN) -->
+  <url>
+    <loc>https://stoaix.com/missed-calls-private-clinic-uk</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/missed-calls-private-clinic-uk"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.com/reduce-no-shows-private-clinic-uk</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/reduce-no-shows-private-clinic-uk"/>
+  </url>
+
   <!-- Blog Posts (EN) -->
   <url>
     <loc>https://stoaix.com/blog/missed-calls-cost-private-clinic</loc>
