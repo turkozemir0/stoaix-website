@@ -1,0 +1,47 @@
+# STOAIX
+
+> STOAIX is an AI voice agent platform built specifically for UK private clinics. It answers inbound calls 24/7 in natural British English, books appointments directly into clinic calendars, sends automated reminder calls, and follows up missed web leads — without any human involvement.
+
+## What STOAIX Does
+
+- Answers every inbound call in under 2 seconds, any hour of the day
+- Books appointments directly into clinic calendar systems in real time
+- Makes outbound reminder and confirmation calls to reduce DNA (Did Not Attend) rates
+- Follows up missed calls and web form leads automatically
+- Provides a live dashboard with call recordings and booking analytics
+- Deployed as a fully managed service — no technical setup required from the clinic
+
+## Who It's For
+
+UK private clinics: aesthetic practices, physiotherapy clinics, dental practices, private GP services, dermatology, and specialist consultant practices. Typically 1–5 clinician practices that receive 20+ inbound calls per week.
+
+## Problem It Solves
+
+UK private clinics lose significant revenue to missed calls. The majority of missed calls occur after 5pm, at weekends, and during peak clinical hours when front-desk staff are unavailable. Patients who reach voicemail rarely call back — they search for a competitor. STOAIX ensures every call is answered and every booking enquiry is converted in real time.
+
+## Key Facts
+
+- Founded: 2025
+- Market: United Kingdom
+- Sector: HealthTech / AI voice agents / Private healthcare
+- Pricing model: Monthly subscription (managed service)
+- Integration: Works with existing clinic phone systems and calendar/booking software
+- Compliance: Built with UK GDPR and CQC-registered clinic requirements in mind
+- Language: British English voice, UK healthcare terminology
+
+## Content
+
+- Homepage: https://stoaix.com
+- Blog: https://stoaix.com/blog
+- Demo booking: https://stoaix.com/#cta
+
+## Blog Articles
+
+- https://stoaix.com/blog/missed-calls-cost-private-clinic — How missed calls cost UK private clinics thousands per month
+- https://stoaix.com/blog/reduce-no-shows-private-clinic — How to reduce DNA rates at UK private clinics
+- https://stoaix.com/blog/ai-receptionist-vs-answering-service-clinic — AI receptionist vs traditional answering services for UK clinics
+
+## Contact
+
+- Website: https://stoaix.com
+- Demo: https://stoaix.com/#cta

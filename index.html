@@ -306,6 +306,101 @@ footer p{font-size:13px;color:var(--muted)}
   .testimonials-grid{grid-template-columns:repeat(2,1fr)}
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://stoaix.com/#organization",
+      "name": "STOAIX",
+      "url": "https://stoaix.com",
+      "logo": "https://stoaix.com/assets/images/logo.png",
+      "description": "AI voice agent platform for UK private clinics. Answers calls 24/7, books appointments, and reduces no-shows — without adding headcount.",
+      "foundingDate": "2025",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "knowsAbout": ["AI voice agents", "private clinic management", "appointment booking automation", "healthcare AI UK"],
+      "sameAs": []
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://stoaix.com/#product",
+      "name": "STOAIX AI Voice Agent",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Cloud",
+      "description": "AI voice agent that answers inbound calls 24/7 for UK private clinics, books appointments in real time, sends reminder calls, and follows up missed leads automatically.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "GBP",
+        "availability": "https://schema.org/InStock"
+      },
+      "provider": {
+        "@id": "https://stoaix.com/#organization"
+      },
+      "featureList": [
+        "24/7 inbound call answering in British English",
+        "Real-time appointment booking into clinic calendar",
+        "Automated outbound reminder and confirmation calls",
+        "Missed call and web lead follow-up",
+        "Live dashboard with call analytics",
+        "Fully managed setup and onboarding"
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "UK private clinic owners and practice managers"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is STOAIX?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "STOAIX is an AI voice agent platform built for UK private clinics. It answers inbound calls 24/7 in natural British English, books appointments directly into your clinic calendar, sends automated reminder calls, and follows up missed leads — without any human involvement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does STOAIX handle appointment booking?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "STOAIX's AI voice agent answers every call in under two seconds, collects patient details through natural conversation, checks real-time availability in your clinic calendar, and confirms the booking — all within the same call. No message-taking, no callbacks required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does STOAIX work for UK private clinics specifically?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. STOAIX is built specifically for the UK private healthcare market — aesthetic clinics, physiotherapy practices, dental practices, private GPs, and specialist consultants. The voice agent speaks in British English and is designed around UK healthcare terminology and GDPR compliance requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much revenue do UK clinics lose to missed calls?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A UK private clinic missing 10 calls per week at £150 average appointment value loses approximately £72,000 per year in potential revenue. Most missed calls occur after 5pm, at weekends, and during peak clinical hours — exactly when front-desk staff are unavailable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can STOAIX reduce no-show rates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. STOAIX makes automated outbound confirmation and reminder calls at 48 hours and 24 hours before each appointment. Clinics using systematic reminder calls consistently report DNA (Did Not Attend) rates falling from 10% to below 5% within the first two months."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <noscript><img height="1" width="1" style="display:none"
