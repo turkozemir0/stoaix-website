@@ -13,7 +13,7 @@
 
 ## Who It's For
 
-UK private clinics: aesthetic practices, physiotherapy clinics, dental practices, private GP services, dermatology, and specialist consultant practices. Typically 1–5 clinician practices that receive 20+ inbound calls per week.
+UK and Turkish private clinics: aesthetic practices, dental practices, hair transplant clinics, physiotherapy, private GP services, dermatology, and specialist consultant practices. Typically 1–5 clinician practices that receive 20+ inbound calls per week.
 
 ## Problem It Solves
 
@@ -34,6 +34,16 @@ UK private clinics lose significant revenue to missed calls. The majority of mis
 - Homepage: https://stoaix.com
 - Blog: https://stoaix.com/blog
 - Demo booking: https://stoaix.com/#cta
+
+## Vertical Landing Pages (English)
+
+- https://stoaix.com/ai-receptionist-dental-clinic-uk — AI receptionist for UK dental practices
+
+## Vertical Landing Pages (Turkish)
+
+- https://stoaix.com/dis-klinigi-icin-ai — AI asistan, diş klinikleri için
+- https://stoaix.com/estetik-klinik-icin-ai — AI asistan, estetik klinikler için
+- https://stoaix.com/sac-ekimi-klinigi-icin-ai — AI asistan, saç ekimi klinikleri için
 
 ## Blog Articles
 

@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# AI crawlers — explicitly allowed for GEO/LLM indexing
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Block non-public directories
+Disallow: /.git/
+Disallow: /assets/.gitkeep
+
+Sitemap: https://stoaix.com/sitemap.xml
