@@ -83,6 +83,32 @@
     <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/ai-receptionist-hair-transplant-clinic"/>
   </url>
 
+  <!-- Additional EN Vertical Landing Pages -->
+  <url>
+    <loc>https://stoaix.com/ai-receptionist-physiotherapy-clinic-uk</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/ai-receptionist-physiotherapy-clinic-uk"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.com/ai-receptionist-private-gp-uk</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/ai-receptionist-private-gp-uk"/>
+  </url>
+
+  <!-- Comparison / AEO Pages (EN) -->
+  <url>
+    <loc>https://stoaix.com/ai-receptionist-vs-human-receptionist-uk</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/ai-receptionist-vs-human-receptionist-uk"/>
+  </url>
+
   <!-- Blog Posts (EN) -->
   <url>
     <loc>https://stoaix.com/blog/missed-calls-cost-private-clinic</loc>
