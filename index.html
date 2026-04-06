@@ -3,6 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1470494194420560');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
 <title>STOAIX — AI Patient Management for UK Clinics</title>
 <link href="https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100;0,400;0,600;0,700;0,900;1,700;1,900&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
@@ -122,7 +136,7 @@ section{padding:100px 48px;border-top:1px solid var(--border)}
 /* ── AUDIO ── */
 .audio-section{background:var(--light)}
 .audio-sub{font-size:16px;color:var(--text-soft);margin:12px 0 48px}
-.audio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.audio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .audio-card{background:#fff;border:1.5px solid var(--border);border-radius:20px;padding:28px;transition:border-color .3s,box-shadow .3s}
 .audio-card:hover{border-color:rgba(35,61,255,0.3);box-shadow:0 12px 36px rgba(35,61,255,0.08)}
 .audio-tag{display:inline-block;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);background:var(--cyan-dim);padding:4px 10px;border-radius:100px;margin-bottom:14px;border:1px solid rgba(66,194,213,0.25);font-weight:600}
@@ -294,6 +308,9 @@ footer p{font-size:13px;color:var(--muted)}
 </style>
 </head>
 <body>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1470494194420560&ev=PageView&noscript=1"
+/></noscript>
 
 <!-- NAV -->
 <nav>
@@ -421,7 +438,7 @@ footer p{font-size:13px;color:var(--muted)}
 <!-- AUDIO DEMOS -->
 <section class="audio-section">
   <p class="section-label">Hear It For Yourself</p>
-  <h2 class="section-h2">4 real AI voice assistant conversations</h2>
+  <h2 class="section-h2">3 real AI voice assistant conversations</h2>
   <p class="audio-sub">Production-style conversations your team can listen to immediately.</p>
   <div class="audio-grid">
     <div class="audio-card">
@@ -434,7 +451,7 @@ footer p{font-size:13px;color:var(--muted)}
         <div class="audio-progress"><div class="audio-progress-bar" id="prog-a1"></div></div>
         <span class="audio-duration" id="dur-a1">0:58</span>
       </div>
-      <audio id="a1" src="assets/audio/01-new-patient-booking.mp3" preload="none"></audio>
+      <audio id="a1" src="assets/audio/appointment-booking-inbound-call.wav" preload="none"></audio>
     </div>
     <div class="audio-card">
       <div class="audio-tag">Outbound</div>
@@ -446,7 +463,7 @@ footer p{font-size:13px;color:var(--muted)}
         <div class="audio-progress"><div class="audio-progress-bar" id="prog-a2"></div></div>
         <span class="audio-duration" id="dur-a2">1:12</span>
       </div>
-      <audio id="a2" src="assets/audio/02-missed-lead-follow-up.mp3" preload="none"></audio>
+      <audio id="a2" src="assets/audio/follow-up-call.wav" preload="none"></audio>
     </div>
     <div class="audio-card">
       <div class="audio-tag">Outbound</div>
@@ -458,19 +475,7 @@ footer p{font-size:13px;color:var(--muted)}
         <div class="audio-progress"><div class="audio-progress-bar" id="prog-a3"></div></div>
         <span class="audio-duration" id="dur-a3">0:44</span>
       </div>
-      <audio id="a3" src="assets/audio/03-appointment-reminder.mp3" preload="none"></audio>
-    </div>
-    <div class="audio-card">
-      <div class="audio-tag">Inbound</div>
-      <h4>Pricing and FAQ Call</h4>
-      <p>A caller asks service pricing and availability, then books directly.</p>
-      <div class="audio-snippet"><strong>Patient:</strong> How much is a whitening session?<br><strong>AI:</strong> Packages start from 220 GBP and include consultation.<br><strong>Patient:</strong> Okay, book me for next Monday.</div>
-      <div class="audio-player">
-        <button class="play-btn" onclick="togglePlay(this,'a4')" id="btn-a4"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
-        <div class="audio-progress"><div class="audio-progress-bar" id="prog-a4"></div></div>
-        <span class="audio-duration" id="dur-a4">1:05</span>
-      </div>
-      <audio id="a4" src="assets/audio/04-pricing-faq-call.mp3" preload="none"></audio>
+      <audio id="a3" src="assets/audio/appointment-reminder-outbound-call.wav" preload="none"></audio>
     </div>
   </div>
 </section>
@@ -489,10 +494,10 @@ footer p{font-size:13px;color:var(--muted)}
       </div>
     </div>
     <div class="panel-screenshot">
-      <img src="assets/images/dashboard.png" alt="STOAIX Dashboard" style="width:100%;display:block" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <img src="assets/images/dashboard.PNG" alt="STOAIX Dashboard" style="width:100%;display:block" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
       <div class="panel-image-fallback" style="display:none;padding:32px;min-height:260px;align-items:center;justify-content:center;text-align:center;background:var(--light);color:var(--muted);font-size:14px;line-height:1.6;">
         Dashboard image not found.<br>
-        Upload your image to <strong>assets/images/dashboard.png</strong>.
+        Upload your image to <strong>assets/images/dashboard.PNG</strong>.
       </div>
     </div>
   </div>
