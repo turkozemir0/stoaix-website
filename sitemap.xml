@@ -207,4 +207,44 @@
     <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/blog/automated-scheduling-private-clinic-uk"/>
   </url>
 
+  <url>
+    <loc>https://stoaix.com/blog/patient-communication-private-clinic-uk</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/blog/patient-communication-private-clinic-uk"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.com/blog/appointment-reminders-private-clinic-uk</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/blog/appointment-reminders-private-clinic-uk"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.com/blog/health-tourism-ai-receptionist</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/blog/health-tourism-ai-receptionist"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.com/blog/hair-transplant-international-patients</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/blog/hair-transplant-international-patients"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.com/blog/dental-tourism-clinic-uk</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/blog/dental-tourism-clinic-uk"/>
+  </url>
+
 </urlset>
