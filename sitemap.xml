@@ -18,6 +18,110 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Digital Products (TR) -->
+  <url>
+    <loc>https://stoaix.co.uk/klinik-kaynaklari</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.co.uk/klinik-kaynaklari"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.co.uk/klinik-lead-kaybi-kontrol-listesi</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.co.uk/klinik-lead-kaybi-kontrol-listesi"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.co.uk/whatsapp-follow-up-mesajlari-klinik</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.co.uk/whatsapp-follow-up-mesajlari-klinik"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.co.uk/eski-lead-reactivation-kit</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.co.uk/eski-lead-reactivation-kit"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.co.uk/klinik-lead-management-starter-kit</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.co.uk/klinik-lead-management-starter-kit"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.co.uk/randevu-no-show-azaltma-paketi</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.co.uk/randevu-no-show-azaltma-paketi"/>
+  </url>
+
+  <!-- Digital Products (EN) -->
+  <url>
+    <loc>https://stoaix.co.uk/clinic-resources</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.co.uk/clinic-resources"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.co.uk/klinik-kaynaklari"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.co.uk/clinic-lead-leak-checklist</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.co.uk/clinic-lead-leak-checklist"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.co.uk/klinik-lead-kaybi-kontrol-listesi"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.co.uk/clinic-whatsapp-follow-up-messages</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.co.uk/clinic-whatsapp-follow-up-messages"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.co.uk/whatsapp-follow-up-mesajlari-klinik"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.co.uk/old-lead-reactivation-kit</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.co.uk/old-lead-reactivation-kit"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.co.uk/eski-lead-reactivation-kit"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.co.uk/clinic-lead-management-starter-kit-en</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.co.uk/clinic-lead-management-starter-kit-en"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.co.uk/klinik-lead-management-starter-kit"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.co.uk/appointment-no-show-reduction-kit</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.co.uk/appointment-no-show-reduction-kit"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.co.uk/randevu-no-show-azaltma-paketi"/>
+  </url>
+
   <!-- Citation / AEO Pages -->
   <url>
     <loc>https://stoaix.com/what-is-ai-receptionist-clinic</loc>
