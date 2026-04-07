@@ -1,0 +1,4 @@
+lead_id,created_at,lead_name,phone,source,status,last_contact_date,next_follow_up_date,interest_level,service_interest,owner,notes
+TR-001,2026-04-07,Ahmet Yilmaz,+905551112233,WhatsApp,Yeni Lead,2026-04-07,2026-04-07,Yuksek,Sac Ekimi,Ata,Ilk mesaj bekleniyor
+TR-002,2026-04-07,Ayse Demir,+905552223344,Instagram,Ilk Temas Yapildi,2026-04-07,2026-04-08,Orta,Dental,Ata,Fiyat bilgisi istedi
+TR-003,2026-04-06,John Smith,+447700900123,Form,Takipte,2026-04-07,2026-04-10,Yuksek,Hair Transplant,Team,Kararsiz ama aktif

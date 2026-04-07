@@ -1,0 +1,4 @@
+lead_id,created_at,lead_name,phone,source,status,last_contact_date,next_follow_up_date,interest_level,service_interest,owner,notes
+EN-001,2026-04-07,James Walker,+447700900111,WhatsApp,New Lead,2026-04-07,2026-04-07,High,Hair Transplant,Team,Waiting for first response
+EN-002,2026-04-07,Sophie Brown,+447700900222,Instagram,First Contact Made,2026-04-07,2026-04-08,Medium,Dental,Team,Asked about price
+EN-003,2026-04-06,Amira Khan,+447700900333,Form,In Follow-Up,2026-04-07,2026-04-10,High,Aesthetics,Team,Interested but undecided
