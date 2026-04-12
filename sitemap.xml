@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://stoaix.com/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Blog Index -->
+  <url>
+    <loc>https://stoaix.com/blog</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Digital Products (TR) -->
+  <url>
+    <loc>https://stoaix.co.uk/klinik-kaynaklari</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.co.uk/klinik-kaynaklari"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.co.uk/klinik-lead-kaybi-kontrol-listesi</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.co.uk/klinik-lead-kaybi-kontrol-listesi"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.co.uk/whatsapp-follow-up-mesajlari-klinik</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.co.uk/whatsapp-follow-up-mesajlari-klinik"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.co.uk/eski-lead-reactivation-kit</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.co.uk/eski-lead-reactivation-kit"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.co.uk/klinik-lead-management-starter-kit</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.co.uk/klinik-lead-management-starter-kit"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.co.uk/randevu-no-show-azaltma-paketi</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.co.uk/randevu-no-show-azaltma-paketi"/>
+  </url>
+
+  <!-- Digital Products (EN) -->
+  <url>
+    <loc>https://stoaix.co.uk/clinic-resources</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.co.uk/clinic-resources"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.co.uk/klinik-kaynaklari"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.co.uk/clinic-lead-leak-checklist</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.co.uk/clinic-lead-leak-checklist"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.co.uk/klinik-lead-kaybi-kontrol-listesi"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.co.uk/clinic-whatsapp-follow-up-messages</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.co.uk/clinic-whatsapp-follow-up-messages"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.co.uk/whatsapp-follow-up-mesajlari-klinik"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.co.uk/old-lead-reactivation-kit</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.co.uk/old-lead-reactivation-kit"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.co.uk/eski-lead-reactivation-kit"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.co.uk/clinic-lead-management-starter-kit-en</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.co.uk/clinic-lead-management-starter-kit-en"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.co.uk/klinik-lead-management-starter-kit"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.co.uk/appointment-no-show-reduction-kit</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.co.uk/appointment-no-show-reduction-kit"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.co.uk/randevu-no-show-azaltma-paketi"/>
+  </url>
+
+  <!-- Citation / AEO Pages -->
+  <url>
+    <loc>https://stoaix.com/what-is-ai-receptionist-clinic</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/what-is-ai-receptionist-clinic"/>
+  </url>
+
+  <!-- Vertical Landing Pages (EN) -->
+  <url>
+    <loc>https://stoaix.com/ai-receptionist-dental-clinic-uk</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/ai-receptionist-dental-clinic-uk"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.com/dis-klinigi-icin-ai"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.com/ai-receptionist-aesthetic-clinic-uk</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/ai-receptionist-aesthetic-clinic-uk"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.com/estetik-klinik-icin-ai"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.com/ai-receptionist-hair-transplant-clinic</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/ai-receptionist-hair-transplant-clinic"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.com/sac-ekimi-klinigi-icin-ai"/>
+  </url>
+
+  <!-- Vertical Landing Pages (TR) -->
+  <url>
+    <loc>https://stoaix.com/dis-klinigi-icin-ai</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.com/dis-klinigi-icin-ai"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/ai-receptionist-dental-clinic-uk"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.com/estetik-klinik-icin-ai</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.com/estetik-klinik-icin-ai"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/ai-receptionist-aesthetic-clinic-uk"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.com/sac-ekimi-klinigi-icin-ai</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://stoaix.com/sac-ekimi-klinigi-icin-ai"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/ai-receptionist-hair-transplant-clinic"/>
+  </url>
+
+  <!-- Additional EN Vertical Landing Pages -->
+  <url>
+    <loc>https://stoaix.com/ai-receptionist-physiotherapy-clinic-uk</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/ai-receptionist-physiotherapy-clinic-uk"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.com/ai-receptionist-private-gp-uk</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/ai-receptionist-private-gp-uk"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.com/ai-receptionist-dermatology-clinic-uk</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/ai-receptionist-dermatology-clinic-uk"/>
+  </url>
+
+  <!-- Comparison / AEO Pages (EN) -->
+  <url>
+    <loc>https://stoaix.com/ai-receptionist-vs-human-receptionist-uk</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/ai-receptionist-vs-human-receptionist-uk"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.com/ai-receptionist-vs-answering-service-uk</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/ai-receptionist-vs-answering-service-uk"/>
+  </url>
+
+  <!-- Pain / Intent Pages (EN) -->
+  <url>
+    <loc>https://stoaix.com/missed-calls-private-clinic-uk</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/missed-calls-private-clinic-uk"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.com/reduce-no-shows-private-clinic-uk</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/reduce-no-shows-private-clinic-uk"/>
+  </url>
+
+  <!-- Blog Posts (EN) -->
+  <url>
+    <loc>https://stoaix.com/blog/missed-calls-cost-private-clinic</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/blog/missed-calls-cost-private-clinic"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.com/blog/reduce-no-shows-private-clinic</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/blog/reduce-no-shows-private-clinic"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.com/blog/ai-receptionist-vs-answering-service-clinic</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/blog/ai-receptionist-vs-answering-service-clinic"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.com/blog/after-hours-calls-private-clinic-uk</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/blog/after-hours-calls-private-clinic-uk"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.com/blog/voice-ai-private-clinic-guide-2026</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/blog/voice-ai-private-clinic-guide-2026"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.com/blog/reduce-admin-costs-private-clinic-uk</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/blog/reduce-admin-costs-private-clinic-uk"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.com/blog/patient-acquisition-private-clinic-uk</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/blog/patient-acquisition-private-clinic-uk"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.com/blog/automated-scheduling-private-clinic-uk</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/blog/automated-scheduling-private-clinic-uk"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.com/blog/patient-communication-private-clinic-uk</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/blog/patient-communication-private-clinic-uk"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.com/blog/appointment-reminders-private-clinic-uk</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/blog/appointment-reminders-private-clinic-uk"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.com/blog/health-tourism-ai-receptionist</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/blog/health-tourism-ai-receptionist"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.com/blog/hair-transplant-international-patients</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/blog/hair-transplant-international-patients"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.com/blog/dental-tourism-clinic-uk</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/blog/dental-tourism-clinic-uk"/>
+  </url>
+
+  <url>
+    <loc>https://stoaix.com/blog/private-dentistry-cma-review-2026</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://stoaix.com/blog/private-dentistry-cma-review-2026"/>
+  </url>
+
+</urlset>
