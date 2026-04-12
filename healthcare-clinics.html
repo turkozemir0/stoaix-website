@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Receptionist for Healthcare Clinics — STOAIX</title>
+  <meta name="description" content="Set up your AI voice receptionist in minutes. Answers calls 24/7 in Turkish, English & Arabic. Built for hair transplant, dental, and aesthetic clinics. 10-day free trial." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+
+    /* ── Hero ──────────────────────────────────────────────── */
+    .hc-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 140px 0 120px;
+      background:
+        radial-gradient(ellipse 75% 65% at 6% 18%,  rgba(37,99,235,0.30)  0%, transparent 55%),
+        radial-gradient(ellipse 58% 52% at 92% 10%,  rgba(124,58,237,0.22) 0%, transparent 50%),
+        radial-gradient(ellipse 52% 44% at 52% 92%,  rgba(59,130,246,0.18) 0%, transparent 50%),
+        radial-gradient(ellipse 42% 38% at 28% 72%,  rgba(99,102,241,0.15) 0%, transparent 52%),
+        #f5f7ff;
+    }
+    /* Dot-grid overlay */
+    .hc-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(37,99,235,0.20) 1px, transparent 1px);
+      background-size: 36px 36px;
+      opacity: 0.32;
+      pointer-events: none;
+      z-index: 0;
+    }
+    /* Bottom vignette */
+    .hc-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, transparent 50%, rgba(245,247,255,0.96) 100%),
+        linear-gradient(to right,  rgba(245,247,255,0.35) 0%, transparent 25%),
+        linear-gradient(to left,   rgba(245,247,255,0.35) 0%, transparent 25%);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .hc-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 24px;
+    }
+    .hc-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--blue-tint);
+      border: 1px solid var(--blue-mid);
+      color: var(--blue);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: var(--r-full);
+      margin-bottom: 28px;
+    }
+    .hc-hero-badge .badge-dot {
+      width: 7px; height: 7px;
+      background: var(--blue);
+      border-radius: 50%;
+      animation: pulse-dot 2s infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(0.7); }
+    }
+    .hc-hero-h1 {
+      font-size: clamp(2.4rem, 5.5vw, 3.9rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.09;
+      color: var(--text);
+      margin-bottom: 22px;
+    }
+    .hc-hero-sub {
+      font-size: 1.15rem;
+      color: var(--text-2);
+      line-height: 1.65;
+      max-width: 640px;
+      margin: 0 auto 36px;
+    }
+    .hc-hero-cta {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .hc-hero-note {
+      font-size: 0.82rem;
+      color: var(--text-3);
+      margin-bottom: 56px;
+    }
+    .hc-hero-stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .hc-stat {
+      flex: 1 1 160px;
+      padding: 20px 28px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .hc-stat:last-child { border-right: none; }
+    .hc-stat-num {
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--blue);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .hc-stat-label {
+      font-size: 0.78rem;
+      color: var(--text-3);
+      font-weight: 500;
+    }
+
+    /* ── Section: Pain points ──────────────────────────────── */
+    .hc-pain {
+      background: var(--bg);
+      padding: 96px 0;
+    }
+    .hc-section-center {
+      max-width: 680px;
+      margin: 0 auto 52px;
+      text-align: center;
+    }
+    .hc-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .hc-4col {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .hc-3col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .hc-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 28px;
+      transition: box-shadow 0.22s var(--ease), transform 0.22s var(--ease);
+    }
+    .hc-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+    .hc-card-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: var(--blue-tint);
+      border: 1px solid var(--blue-mid);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+    }
+    .hc-card-icon svg {
+      width: 20px; height: 20px;
+      stroke: var(--blue);
+      fill: none;
+      stroke-width: 1.75;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .hc-card-icon.red-bg {
+      background: #fef2f2;
+      border-color: #fecaca;
+    }
+    .hc-card-icon.red-bg svg { stroke: #dc2626; }
+    .hc-card h3 {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .hc-card p {
+      font-size: 0.875rem;
+      color: var(--text-2);
+      line-height: 1.6;
+    }
+
+    /* ── Section: How STOAIX works ─────────────────────────── */
+    .hc-how {
+      background: var(--bg-2);
+      padding: 96px 0;
+    }
+    .hc-2col-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .hc-split-content h2 {
+      font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .hc-split-content p {
+      font-size: 1rem;
+      color: var(--text-2);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .hc-check-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .hc-check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: var(--text-2);
+      line-height: 1.5;
+    }
+    .hc-check-item::before {
+      content: '';
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--blue);
+      flex-shrink: 0;
+      margin-top: 1px;
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4L3.5 6.5L9 1' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .hc-split-visual {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .hc-visual-header {
+      background: var(--bg-2);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hc-visual-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--border-2);
+    }
+    .hc-visual-dot.green { background: #4ade80; }
+    .hc-visual-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-3);
+    }
+    .hc-visual-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .hc-msg {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .hc-msg-avatar {
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      background: var(--blue);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .hc-msg-avatar.gray { background: var(--bg-3); color: var(--text-3); }
+    .hc-msg-bubble {
+      background: var(--blue-tint);
+      border: 1px solid var(--blue-mid);
+      border-radius: 4px 14px 14px 14px;
+      padding: 10px 14px;
+      font-size: 0.82rem;
+      color: var(--text);
+      line-height: 1.5;
+      max-width: 80%;
+    }
+    .hc-msg.right { flex-direction: row-reverse; }
+    .hc-msg.right .hc-msg-bubble {
+      background: var(--bg-2);
+      border-color: var(--border);
+      border-radius: 14px 4px 14px 14px;
+      color: var(--text-2);
+    }
+    .hc-visual-status {
+      padding: 14px 20px;
+      border-top: 1px solid var(--border);
+      background: #f0fdf4;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #15803d;
+    }
+    .hc-visual-status-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #4ade80;
+    }
+
+    /* ── Features grid ─────────────────────────────────────── */
+    .hc-features {
+      background: var(--bg);
+      padding: 96px 0;
+    }
+
+    /* ── Clinic types ──────────────────────────────────────── */
+    .hc-clinics {
+      background: var(--bg-2);
+      padding: 96px 0;
+    }
+
+    /* ── Languages ─────────────────────────────────────────── */
+    .hc-languages {
+      background: var(--bg);
+      padding: 96px 0;
+    }
+    .hc-lang-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .hc-lang-row {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      transition: box-shadow 0.2s;
+    }
+    .hc-lang-row:hover { box-shadow: var(--shadow-sm); }
+    .hc-lang-flag {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 1.5px solid var(--border);
+      flex-shrink: 0;
+      overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+    }
+    .hc-lang-info h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    .hc-lang-info p {
+      font-size: 0.8rem;
+      color: var(--text-3);
+    }
+    .hc-lang-badge {
+      margin-left: auto;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: var(--r-full);
+      background: var(--blue-tint);
+      color: var(--blue);
+      border: 1px solid var(--blue-mid);
+      white-space: nowrap;
+    }
+    .hc-lang-badge.dim {
+      background: var(--bg-2);
+      color: var(--text-3);
+      border-color: var(--border);
+    }
+
+    /* ── Setup steps ───────────────────────────────────────── */
+    .hc-setup {
+      background: var(--bg-2);
+      padding: 96px 0;
+    }
+    .hc-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .hc-steps::before {
+      content: '';
+      position: absolute;
+      top: 24px;
+      left: calc(12.5% + 24px);
+      right: calc(12.5% + 24px);
+      height: 1.5px;
+      background: linear-gradient(90deg, var(--blue) 0%, var(--blue-mid) 100%);
+    }
+    .hc-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 16px;
+      position: relative;
+      z-index: 1;
+    }
+    .hc-step-num {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 18px;
+      box-shadow: 0 0 0 6px var(--bg-2);
+    }
+    .hc-step h3 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .hc-step p {
+      font-size: 0.82rem;
+      color: var(--text-2);
+      line-height: 1.55;
+    }
+
+    /* ── Pricing ───────────────────────────────────────────── */
+    .hc-pricing {
+      background: var(--bg);
+      padding: 96px 0;
+    }
+    .hc-plan-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .hc-plan {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 28px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.22s var(--ease), transform 0.22s var(--ease);
+      position: relative;
+    }
+    .hc-plan:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+    .hc-plan.featured {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.10);
+    }
+    .hc-plan-tag {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--blue);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      padding: 4px 12px;
+      border-radius: var(--r-full);
+      white-space: nowrap;
+    }
+    .hc-plan-name {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-3);
+      margin-bottom: 10px;
+    }
+    .hc-plan-price {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .hc-plan-price span {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-3);
+      letter-spacing: 0;
+    }
+    .hc-plan-hint {
+      font-size: 0.78rem;
+      color: var(--text-3);
+      margin-bottom: 20px;
+    }
+    .hc-plan-divider {
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 18px;
+    }
+    .hc-plan-features {
+      list-style: none;
+      margin: 0 0 24px;
+      padding: 0;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .hc-plan-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--text-2);
+      line-height: 1.45;
+    }
+    .hc-plan-features li::before {
+      content: '';
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--blue);
+      background-image: url("data:image/svg+xml,%3Csvg width='8' height='6' viewBox='0 0 8 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3L3 5L7 1' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .hc-plan-cta {
+      display: block;
+      text-align: center;
+      padding: 11px;
+      border-radius: var(--r-full);
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s var(--ease);
+    }
+    .hc-plan-cta.outline {
+      border: 1.5px solid var(--border);
+      color: var(--text);
+    }
+    .hc-plan-cta.outline:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+    }
+    .hc-plan-cta.solid {
+      background: var(--blue);
+      color: #fff;
+      box-shadow: 0 2px 10px rgba(37,99,235,0.22);
+    }
+    .hc-plan-cta.solid:hover {
+      background: var(--blue-h);
+      box-shadow: 0 4px 18px rgba(37,99,235,0.32);
+    }
+    .hc-pricing-note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-3);
+      margin-top: 24px;
+    }
+    .hc-pricing-note a { color: var(--blue); font-weight: 600; }
+
+    /* ── FAQ ───────────────────────────────────────────────── */
+    .hc-faq {
+      background: var(--bg-2);
+      padding: 96px 0;
+    }
+    .hc-faq-wrap {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .hc-faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .hc-faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      font-family: inherit;
+    }
+    .hc-faq-icon {
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: var(--blue-tint);
+      border: 1px solid var(--blue-mid);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.25s var(--ease), background 0.2s;
+    }
+    .hc-faq-icon svg {
+      width: 10px; height: 10px;
+      stroke: var(--blue);
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+    }
+    .hc-faq-item.open .hc-faq-icon { transform: rotate(45deg); background: var(--blue); }
+    .hc-faq-item.open .hc-faq-icon svg { stroke: #fff; }
+    .hc-faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s var(--ease); }
+    .hc-faq-item.open .hc-faq-a { max-height: 360px; }
+    .hc-faq-a p {
+      font-size: 0.9rem;
+      color: var(--text-2);
+      line-height: 1.7;
+      padding-bottom: 20px;
+    }
+
+    /* ── CTA ───────────────────────────────────────────────── */
+    .hc-cta {
+      background: linear-gradient(135deg, #0f1f4d 0%, #1d4ed8 60%, #2563eb 100%);
+      padding: 96px 0;
+      text-align: center;
+    }
+    .hc-cta-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .hc-cta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.88);
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: var(--r-full);
+      margin-bottom: 26px;
+    }
+    .hc-cta h2 {
+      font-size: clamp(1.9rem, 4.5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+    .hc-cta p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.6;
+      margin-bottom: 36px;
+    }
+    .hc-cta-btns {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .btn-white {
+      background: #fff;
+      color: var(--blue);
+      padding: 14px 28px;
+      border-radius: var(--r-full);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: opacity 0.2s, transform 0.15s;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+    }
+    .btn-white:hover { opacity: 0.92; transform: translateY(-1px); }
+    .btn-ghost-white {
+      border: 1.5px solid rgba(255,255,255,0.30);
+      color: rgba(255,255,255,0.88);
+      padding: 14px 28px;
+      border-radius: var(--r-full);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-ghost-white:hover {
+      border-color: rgba(255,255,255,0.65);
+      background: rgba(255,255,255,0.06);
+    }
+    .hc-cta-fine {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* ── Responsive ────────────────────────────────────────── */
+    @media (max-width: 960px) {
+      .hc-plan-grid { grid-template-columns: repeat(2, 1fr); }
+      .hc-4col      { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .hc-2col,
+      .hc-2col-split { grid-template-columns: 1fr; }
+      .hc-3col        { grid-template-columns: 1fr; }
+      .hc-steps       { grid-template-columns: 1fr 1fr; }
+      .hc-steps::before { display: none; }
+      .hc-step-num   { box-shadow: none; }
+      .hc-stat        { border-right: none; border-bottom: 1px solid var(--border); }
+      .hc-stat:last-child { border-bottom: none; }
+    }
+    @media (max-width: 560px) {
+      .hc-plan-grid { grid-template-columns: 1fr; }
+      .hc-4col      { grid-template-columns: 1fr; }
+      .hc-steps     { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navbar ── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo-iconwithname.svg" class="nav-logo-wordmark" alt="STOAIX" />
+      </a>
+      <div class="nav-links">
+        <div class="nav-dropdown-item">
+          <button class="nav-link-btn">Product <span class="nav-chevron">↓</span></button>
+          <div class="nav-dropdown">
+            <div class="dropdown-inner">
+              <a href="index.html#features" class="dropdown-link">
+                <span class="dropdown-icon-wrap">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18.5a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13Z"/><path d="M19.14 19.14 22 22M2 22l2.86-2.86"/><path d="M12 12v-2M12 8v-.5"/></svg>
+                </span>
+                <div>
+                  <div class="dropdown-title">Voice AI</div>
+                  <div class="dropdown-desc">Answer every call, 24/7</div>
+                </div>
+              </a>
+              <a href="index.html#features" class="dropdown-link">
+                <span class="dropdown-icon-wrap">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </span>
+                <div>
+                  <div class="dropdown-title">WhatsApp & Chat</div>
+                  <div class="dropdown-desc">Automate message channels</div>
+                </div>
+              </a>
+              <a href="index.html#features" class="dropdown-link">
+                <span class="dropdown-icon-wrap">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                </span>
+                <div>
+                  <div class="dropdown-title">CRM & Pipeline</div>
+                  <div class="dropdown-desc">Track and score every lead</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a href="index.html#pricing" class="nav-link">Pricing</a>
+        <a href="healthcare-clinics.html" class="nav-link" style="color:var(--text);font-weight:500;">Healthcare</a>
+        <a href="partners.html" class="nav-link">Partners</a>
+      </div>
+      <div class="nav-actions">
+        <a href="#" class="nav-login">Log in</a>
+        <a href="#trial" class="btn-primary btn-sm">Start free trial</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#features">Product</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="healthcare-clinics.html">Healthcare</a>
+    <a href="partners.html">Partners</a>
+    <a href="#" class="nav-login">Log in</a>
+    <a href="#trial" class="btn-primary">Start free trial</a>
+  </div>
+
+  <!-- ── Hero ── -->
+  <section class="hc-hero">
+    <div class="hc-hero-inner">
+      <div class="hc-hero-badge reveal">
+        <span class="badge-dot"></span>
+        Built for healthcare clinics
+      </div>
+      <h1 class="hc-hero-h1 reveal">
+        Your AI receptionist,<br>
+        <span class="gradient-text">live in minutes.</span>
+      </h1>
+      <p class="hc-hero-sub reveal">
+        Answers every call 24/7 in Turkish, English, and Arabic.
+        Qualifies patients, books consultations, and follows up on cold leads —
+        all without a single meeting with us.
+      </p>
+      <div class="hc-hero-cta reveal">
+        <a href="#trial" class="btn-primary btn-lg">
+          Start 10-day free trial
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#pricing" class="btn-ghost btn-lg">See pricing</a>
+      </div>
+      <p class="hc-hero-note reveal">No credit card required &nbsp;·&nbsp; Cancel anytime &nbsp;·&nbsp; Setup in minutes</p>
+      <div class="hc-hero-stats reveal">
+        <div class="hc-stat">
+          <div class="hc-stat-num">24/7</div>
+          <div class="hc-stat-label">Always answers</div>
+        </div>
+        <div class="hc-stat">
+          <div class="hc-stat-num">3+</div>
+          <div class="hc-stat-label">Languages (TR / EN / AR)</div>
+        </div>
+        <div class="hc-stat">
+          <div class="hc-stat-num">&lt; 5 min</div>
+          <div class="hc-stat-label">Time to set up</div>
+        </div>
+        <div class="hc-stat">
+          <div class="hc-stat-num">$0</div>
+          <div class="hc-stat-label">Setup fee</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Pain: What clinics lose ── -->
+  <section class="hc-pain">
+    <div class="container">
+      <div class="hc-section-center reveal">
+        <div class="section-badge">The real cost</div>
+        <h2 class="section-headline">Four ways your clinic leaks revenue every day</h2>
+        <p class="section-sub centered">Every clinic we talk to — hair transplant, dental, aesthetic — has the same four problems.</p>
+      </div>
+      <div class="hc-4col stagger">
+        <div class="hc-card">
+          <div class="hc-card-icon red-bg">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6"/><line x1="2" y1="2" x2="22" y2="22"/></svg>
+          </div>
+          <h3>Missed calls = missed revenue</h3>
+          <p>International patients call at midnight your time. After-hours and weekends are your busiest windows — and exactly when your team is offline. Every unanswered ring goes to a competitor.</p>
+        </div>
+        <div class="hc-card">
+          <div class="hc-card-icon red-bg">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Failed follow-ups</h3>
+          <p>A consultation ends with "I'll think about it." Nobody calls back on day 3. Nobody sends a WhatsApp on day 7. That warm lead cools in silence — and you never knew how close they were.</p>
+        </div>
+        <div class="hc-card">
+          <div class="hc-card-icon red-bg">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <h3>Dead lead lists</h3>
+          <p>Hundreds of old enquiries buried in Excel, WhatsApp, and your CRM. Each one asked about a procedure, then went quiet. They haven't said no — they just haven't been re-engaged.</p>
+        </div>
+        <div class="hc-card">
+          <div class="hc-card-icon red-bg">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Call center overload</h3>
+          <p>Your team spends hours answering "how much does a hair transplant cost?" over and over. Repetitive questions eat the time that should go to closing actual consultations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── How it works ── -->
+  <section class="hc-how">
+    <div class="container">
+      <div class="hc-2col-split">
+        <div class="hc-split-content reveal">
+          <div class="section-badge">How it works</div>
+          <h2>Set up once. Let it run.</h2>
+          <p>STOAIX is a self-serve platform. You sign up, configure your AI agent using the guided setup — no code, no meetings — and it's live on your clinic's number in minutes.</p>
+          <div class="hc-check-list">
+            <div class="hc-check-item">Answers every inbound call instantly, 24/7</div>
+            <div class="hc-check-item">Asks the right qualification questions for your procedure type</div>
+            <div class="hc-check-item">Collects patient name, condition, photos needed, and preferred dates</div>
+            <div class="hc-check-item">Books consultations directly into your calendar</div>
+            <div class="hc-check-item">Follows up automatically when a patient goes cold</div>
+            <div class="hc-check-item">Transfers to your team the moment a patient is ready to commit</div>
+          </div>
+          <a href="#trial" class="btn-primary">
+            Try it free for 10 days
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <div class="hc-split-visual reveal">
+          <div class="hc-visual-header">
+            <div class="hc-visual-dot"></div>
+            <div class="hc-visual-dot"></div>
+            <div class="hc-visual-dot green"></div>
+            <div class="hc-visual-title">AI Agent — Live</div>
+          </div>
+          <div class="hc-visual-body">
+            <div class="hc-msg">
+              <div class="hc-msg-avatar gray">P</div>
+              <div class="hc-msg-bubble">Hi, I'm calling about a hair transplant consultation. Is this the right number?</div>
+            </div>
+            <div class="hc-msg right">
+              <div class="hc-msg-avatar">AI</div>
+              <div class="hc-msg-bubble">Yes, absolutely. I'm the STOAIX AI assistant for this clinic. I can get you booked in right now — may I ask a few quick questions?</div>
+            </div>
+            <div class="hc-msg">
+              <div class="hc-msg-avatar gray">P</div>
+              <div class="hc-msg-bubble">Sure, go ahead.</div>
+            </div>
+            <div class="hc-msg right">
+              <div class="hc-msg-avatar">AI</div>
+              <div class="hc-msg-bubble">Great. Could you describe your current hair loss stage, and do you have any previous transplant history?</div>
+            </div>
+          </div>
+          <div class="hc-visual-status">
+            <div class="hc-visual-status-dot"></div>
+            Patient qualified — consultation booked for Tuesday 14:00
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Features ── -->
+  <section class="hc-features">
+    <div class="container">
+      <div class="hc-section-center reveal">
+        <div class="section-badge">Features</div>
+        <h2 class="section-headline">Everything a clinic needs. Nothing it doesn't.</h2>
+        <p class="section-sub centered">Voice, chat, CRM, and follow-up — in one self-serve platform. No separate tools. No integrations to stitch together.</p>
+      </div>
+      <div class="hc-3col stagger">
+        <div class="hc-card">
+          <div class="hc-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <h3>Voice AI — Inbound (Plus+)</h3>
+          <p>Every incoming call answered within 2 seconds, 24/7. No voicemail, no hold music. Patients get answers; your team gets qualified leads.</p>
+        </div>
+        <div class="hc-card">
+          <div class="hc-card-icon">
+            <svg viewBox="0 0 24 24"><polyline points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </div>
+          <h3>Voice AI — Outbound (Advanced)</h3>
+          <p>Automatically calls leads who went cold, confirms upcoming appointments, and re-engages past enquiries. Converts "I'll think about it" into booked slots.</p>
+        </div>
+        <div class="hc-card">
+          <div class="hc-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3>WhatsApp AI Chatbot (Lite+)</h3>
+          <p>Answers patient questions on WhatsApp 24/7 using your clinic's knowledge base. Price enquiries, procedure info, availability — handled automatically.</p>
+        </div>
+        <div class="hc-card">
+          <div class="hc-card-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          </div>
+          <h3>CRM & Lead Pipeline (Advanced)</h3>
+          <p>Every lead tracked in a clean pipeline with lead scoring, status stages, and activity logs. Your team sees exactly where each patient stands.</p>
+        </div>
+        <div class="hc-card">
+          <div class="hc-card-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>3 Languages Built-in (Advanced)</h3>
+          <p>Turkish, English, and Arabic included. The AI detects the patient's language and continues natively — no configuration, no translator required.</p>
+        </div>
+        <div class="hc-card">
+          <div class="hc-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </div>
+          <h3>Zapier, Make & Webhook (Advanced)</h3>
+          <p>Connect to your existing calendar, booking system, or CRM. Triggers on new lead, booking confirmed, or handoff ready — no developer needed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Clinic types ── -->
+  <section class="hc-clinics">
+    <div class="container">
+      <div class="hc-section-center reveal">
+        <div class="section-badge">Who it's for</div>
+        <h2 class="section-headline">Built for every healthcare clinic vertical</h2>
+        <p class="section-sub centered">Configure your AI for your specific procedure type, patient profile, and intake requirements — all within the same platform.</p>
+      </div>
+      <div class="hc-4col stagger">
+        <div class="hc-card">
+          <div class="hc-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Hair Transplant Clinics</h3>
+          <p>High-value international patients, long decision cycles, and multilingual enquiries. STOAIX handles the volume, qualifies FUE vs. DHI conversations, and surfaces ready leads.</p>
+        </div>
+        <div class="hc-card">
+          <div class="hc-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6a6 6 0 1 0 6 6 6 6 0 0 0-6-6zm0 10a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/></svg>
+          </div>
+          <h3>Dental Clinics</h3>
+          <p>Implants, veneers, zirconia — patients ask the same questions 50 times a day. STOAIX answers all of them instantly, collects treatment history, and books around your schedule.</p>
+        </div>
+        <div class="hc-card">
+          <div class="hc-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3>Aesthetic Surgery</h3>
+          <p>High-ticket, high-sensitivity procedures. STOAIX warms the lead, collects photos and health history, and routes only pre-qualified patients to your surgeons.</p>
+        </div>
+        <div class="hc-card">
+          <div class="hc-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M8.56 2.9A7 7 0 0 1 19 9v4l3 3-3 3v1a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-1l-3-3 3-3V9a7 7 0 0 1 1.56-4.3"/><circle cx="12" cy="9" r="1"/></svg>
+          </div>
+          <h3>Medical Aesthetics</h3>
+          <p>Botox, fillers, PRP — high enquiry volume, repeat patients, seasonal spikes. STOAIX manages appointment reminders, follow-up sequences, and re-engagement campaigns.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Languages ── -->
+  <section class="hc-languages">
+    <div class="container">
+      <div class="hc-2col-split">
+        <div class="hc-split-content reveal">
+          <div class="section-badge">Multilingual</div>
+          <h2>Your patients speak three languages. So does STOAIX.</h2>
+          <p>
+            Healthcare tourism patients come from Turkey, the UK, Europe, and the Middle East.
+            STOAIX switches languages mid-conversation based on what the patient speaks —
+            no configuration needed, no human translator required.
+          </p>
+          <p>
+            Turkish, English, and Arabic are included in the Advanced plan.
+            Additional languages are available as add-ons: Russian, German, French, Spanish, and more.
+          </p>
+          <a href="#trial" class="btn-primary">
+            Start with all three languages
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <div class="hc-lang-cards reveal">
+          <div class="hc-lang-row">
+            <div class="hc-lang-flag">TR</div>
+            <div class="hc-lang-info">
+              <h4>Turkish</h4>
+              <p>Local patients, domestic referrals, staff communication</p>
+            </div>
+            <span class="hc-lang-badge">Advanced+</span>
+          </div>
+          <div class="hc-lang-row">
+            <div class="hc-lang-flag">EN</div>
+            <div class="hc-lang-info">
+              <h4>English</h4>
+              <p>UK, EU, US, Australian healthcare tourism patients</p>
+            </div>
+            <span class="hc-lang-badge">Advanced+</span>
+          </div>
+          <div class="hc-lang-row">
+            <div class="hc-lang-flag">AR</div>
+            <div class="hc-lang-info">
+              <h4>Arabic</h4>
+              <p>Gulf and Middle East patients — a major underserved segment</p>
+            </div>
+            <span class="hc-lang-badge">Advanced+</span>
+          </div>
+          <div class="hc-lang-row" style="opacity:0.65;">
+            <div class="hc-lang-flag" style="font-size:0.7rem;font-weight:700;color:var(--text-3);">+12</div>
+            <div class="hc-lang-info">
+              <h4>More available</h4>
+              <p>Russian, German, French, Spanish, Italian, Dutch, and more</p>
+            </div>
+            <span class="hc-lang-badge dim">Add-on</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Setup steps ── -->
+  <section class="hc-setup">
+    <div class="container">
+      <div class="hc-section-center reveal">
+        <div class="section-badge">Getting started</div>
+        <h2 class="section-headline">Live in under 5 minutes</h2>
+        <p class="section-sub centered">Fully self-serve. No meetings with our team. The guided setup walks you through every step.</p>
+      </div>
+      <div class="hc-steps">
+        <div class="hc-step reveal">
+          <div class="hc-step-num">1</div>
+          <h3>Sign up</h3>
+          <p>Start your 10-day free trial. No credit card required.</p>
+        </div>
+        <div class="hc-step reveal">
+          <div class="hc-step-num">2</div>
+          <h3>Configure your agent</h3>
+          <p>Add your procedures, FAQs, and intake questions using the no-code builder.</p>
+        </div>
+        <div class="hc-step reveal">
+          <div class="hc-step-num">3</div>
+          <h3>Connect your number</h3>
+          <p>Forward your clinic's phone number or assign a new one to STOAIX.</p>
+        </div>
+        <div class="hc-step reveal">
+          <div class="hc-step-num">4</div>
+          <h3>Go live</h3>
+          <p>Your AI receptionist is active. View every call and lead from your dashboard.</p>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:40px;" class="reveal">
+        <p style="font-size:0.9rem;color:var(--text-3);margin-bottom:12px;">
+          Prefer us to set it up for you? The
+          <strong style="color:var(--text);">Onboarding Add-on</strong>
+          includes a 60-minute setup session for $297 — available at checkout.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Pricing ── -->
+  <section class="hc-pricing" id="pricing">
+    <div class="container">
+      <div class="hc-section-center reveal">
+        <div class="section-badge">Pricing</div>
+        <h2 class="section-headline">Start free. Scale as you grow.</h2>
+        <p class="section-sub centered">All plans include a 10-day free trial. No minimum commitment. Cancel anytime. Annual plans save 20%.</p>
+      </div>
+      <div class="hc-plan-grid">
+
+        <!-- Lite -->
+        <div class="hc-plan reveal">
+          <div class="hc-plan-name">Lite</div>
+          <div class="hc-plan-price">$79<span>/mo</span></div>
+          <div class="hc-plan-hint">$63/mo billed annually</div>
+          <div class="hc-plan-divider"></div>
+          <ul class="hc-plan-features">
+            <li>WhatsApp AI chatbot — 24/7</li>
+            <li>Web chat widget</li>
+            <li>Knowledge base (30 FAQs)</li>
+            <li>CRM Lite — basic pipeline</li>
+            <li>2 users</li>
+            <li>Email support</li>
+          </ul>
+          <a href="#trial" class="hc-plan-cta outline">Start free trial</a>
+        </div>
+
+        <!-- Plus -->
+        <div class="hc-plan reveal">
+          <div class="hc-plan-name">Plus</div>
+          <div class="hc-plan-price">$149<span>/mo</span></div>
+          <div class="hc-plan-hint">$119/mo billed annually</div>
+          <div class="hc-plan-divider"></div>
+          <ul class="hc-plan-features">
+            <li>Everything in Lite</li>
+            <li>Voice AI — inbound 24/7</li>
+            <li>300 min/mo included</li>
+            <li>Call recording & transcript</li>
+            <li>5 users</li>
+            <li>Priority email support</li>
+          </ul>
+          <a href="#trial" class="hc-plan-cta outline">Start free trial</a>
+        </div>
+
+        <!-- Advanced -->
+        <div class="hc-plan featured reveal">
+          <div class="hc-plan-tag">Most Popular</div>
+          <div class="hc-plan-name">Advanced</div>
+          <div class="hc-plan-price">$299<span>/mo</span></div>
+          <div class="hc-plan-hint">$239/mo billed annually</div>
+          <div class="hc-plan-divider"></div>
+          <ul class="hc-plan-features">
+            <li>Everything in Plus</li>
+            <li>Voice AI — inbound + outbound</li>
+            <li>750 min/mo included</li>
+            <li>Turkish + English + Arabic</li>
+            <li>Full CRM — lead scoring, pipeline, reports</li>
+            <li>Zapier / Make / Webhook</li>
+            <li>10 users</li>
+            <li>Monthly performance report</li>
+          </ul>
+          <a href="#trial" class="hc-plan-cta solid">Start free trial</a>
+        </div>
+
+        <!-- Agency -->
+        <div class="hc-plan reveal">
+          <div class="hc-plan-name">Agency</div>
+          <div class="hc-plan-price">$499<span>/mo</span></div>
+          <div class="hc-plan-hint">$399/mo billed annually</div>
+          <div class="hc-plan-divider"></div>
+          <ul class="hc-plan-features">
+            <li>Everything in Advanced</li>
+            <li>Multi-location management</li>
+            <li>Separate agent per location</li>
+            <li>Reseller dashboard</li>
+            <li>White-label (logo, color, domain)</li>
+            <li>Unlimited users</li>
+            <li>Priority technical support</li>
+          </ul>
+          <a href="#trial" class="hc-plan-cta outline">Start free trial</a>
+        </div>
+
+      </div>
+      <div class="hc-pricing-note reveal">
+        All plans: 10-day free trial, no credit card required, cancel anytime.
+        Voice AI overages: $0.15/min.&nbsp;
+        <a href="#faq">See full FAQ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="hc-faq" id="faq">
+    <div class="container">
+      <div class="hc-faq-wrap">
+        <div class="hc-section-center reveal">
+          <div class="section-badge">FAQ</div>
+          <h2 class="section-headline">Common questions</h2>
+        </div>
+
+        <div class="hc-faq-item reveal">
+          <button class="hc-faq-q">
+            How long does setup actually take?
+            <span class="hc-faq-icon"><svg viewBox="0 0 12 12"><path d="M6 2v8M2 6h8"/></svg></span>
+          </button>
+          <div class="hc-faq-a">
+            <p>Under 5 minutes for a basic configuration. The guided setup wizard walks you through adding your procedures, FAQs, intake questions, and connecting your phone number. You don't need to talk to us, read documentation, or wait for anything to be approved. If you want us to handle the setup for you, the Onboarding Add-on ($297 one-time) includes a 60-minute session where we build it together.</p>
+          </div>
+        </div>
+
+        <div class="hc-faq-item reveal">
+          <button class="hc-faq-q">
+            Does STOAIX replace my reception team?
+            <span class="hc-faq-icon"><svg viewBox="0 0 12 12"><path d="M6 2v8M2 6h8"/></svg></span>
+          </button>
+          <div class="hc-faq-a">
+            <p>No — STOAIX handles the repetitive, high-volume layer: answering FAQs, qualifying patients, collecting intake information, and booking consultations. When a patient is serious or has a complex question, the AI immediately transfers to your team with full context already captured. Your staff spends less time on routine calls and more time on closing consultations.</p>
+          </div>
+        </div>
+
+        <div class="hc-faq-item reveal">
+          <button class="hc-faq-q">
+            Does it work for international patients who don't speak Turkish?
+            <span class="hc-faq-icon"><svg viewBox="0 0 12 12"><path d="M6 2v8M2 6h8"/></svg></span>
+          </button>
+          <div class="hc-faq-a">
+            <p>Yes. On the Advanced plan, STOAIX includes Turkish, English, and Arabic out of the box. The AI detects the patient's language from the first message or spoken word and continues the conversation natively — no configuration required, no extra cost per language. For UK and Gulf patients especially, responding immediately in their language at any hour is the single biggest conversion driver we see across clinics.</p>
+          </div>
+        </div>
+
+        <div class="hc-faq-item reveal">
+          <button class="hc-faq-q">
+            We already use GHL or another CRM. Does STOAIX integrate?
+            <span class="hc-faq-icon"><svg viewBox="0 0 12 12"><path d="M6 2v8M2 6h8"/></svg></span>
+          </button>
+          <div class="hc-faq-a">
+            <p>Yes. The Advanced plan includes Zapier, Make, and direct webhook support, which covers GoHighLevel, HubSpot, Calendly, Google Calendar, and hundreds of other tools. You don't need to change your existing workflow — STOAIX triggers events into it. For custom CRM integrations, contact us for a one-time setup.</p>
+          </div>
+        </div>
+
+        <div class="hc-faq-item reveal">
+          <button class="hc-faq-q">
+            Is there a minimum commitment or long-term contract?
+            <span class="hc-faq-icon"><svg viewBox="0 0 12 12"><path d="M6 2v8M2 6h8"/></svg></span>
+          </button>
+          <div class="hc-faq-a">
+            <p>No. STOAIX is month-to-month — cancel anytime from your dashboard, no questions asked. Annual billing saves 20% if you'd like to lock that in. The 10-day free trial lets you test the full product before you pay anything. No credit card is required to start.</p>
+          </div>
+        </div>
+
+        <div class="hc-faq-item reveal">
+          <button class="hc-faq-q">
+            My clinic group has multiple locations. Which plan do I need?
+            <span class="hc-faq-icon"><svg viewBox="0 0 12 12"><path d="M6 2v8M2 6h8"/></svg></span>
+          </button>
+          <div class="hc-faq-a">
+            <p>The Agency plan ($499/mo) supports multi-location management from a single dashboard. Each location gets its own configured AI agent, phone number, and knowledge base, while you manage everything from one place. This plan also includes white-label customisation if you want to remove STOAIX branding.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="hc-cta" id="trial">
+    <div class="hc-cta-inner">
+      <div class="hc-cta-badge reveal">10-day free trial · No credit card required</div>
+      <h2 class="reveal">
+        Stop losing patients<br>to missed calls.
+      </h2>
+      <p class="reveal">
+        Set up your AI receptionist in minutes. See it answer calls, qualify patients,
+        and book consultations — before you pay a single dollar.
+      </p>
+      <div class="hc-cta-btns reveal">
+        <a href="#" class="btn-white">
+          Start free trial
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="index.html#pricing" class="btn-ghost-white">Compare all plans</a>
+      </div>
+      <p class="hc-cta-fine reveal">10 days free · No credit card · Cancel anytime</p>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="footer-inner container">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <img src="assets/logo-iconwithname.svg" class="nav-logo-wordmark" alt="STOAIX" />
+        </a>
+        <p class="footer-tagline">AI Receptionist — Voice, Chat & CRM</p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <div class="footer-col-title">Product</div>
+          <a href="index.html#features">Features</a>
+          <a href="index.html#pricing">Pricing</a>
+          <a href="index.html#integrations">Integrations</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Solutions</div>
+          <a href="healthcare-clinics.html">Healthcare Clinics</a>
+          <a href="partners.html">Partner Program</a>
+          <a href="index.html#features">All Industries</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Company</div>
+          <a href="#">About</a>
+          <a href="#">Blog</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Legal</div>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">GDPR</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>© 2026 STOAIX. All rights reserved.</p>
+      <p>AI Receptionist — Voice, Chat & CRM for Any Business</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.querySelectorAll('.hc-faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.hc-faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.hc-faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
+</body>
+</html>
