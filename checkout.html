@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Start Your Trial — STOAIX</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    body { background: #f5f8ff; }
+    .auth-page { min-height: 100vh; display: flex; flex-direction: column; }
+
+    .auth-nav {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(12px);
+    }
+    .auth-nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .auth-nav-logo img { height: 28px; }
+    .checkout-secure {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8rem; color: var(--text-2); font-weight: 500;
+    }
+    .checkout-secure svg { color: #16a34a; }
+
+    .checkout-main {
+      flex: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 48px 24px 80px;
+    }
+
+    .checkout-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 32px;
+      max-width: 860px;
+      width: 100%;
+    }
+
+    /* Payment form */
+    .checkout-card {
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 40px 36px;
+      box-shadow: 0 4px 24px rgba(37,99,235,0.06);
+    }
+    .checkout-section-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-1);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .checkout-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-label { font-size: 0.83rem; font-weight: 600; color: var(--text-1); }
+    .form-input {
+      padding: 11px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-size: 0.9rem;
+      color: var(--text-1);
+      background: var(--bg-2);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      font-family: inherit;
+    }
+    .form-input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.10);
+      background: #fff;
+    }
+    .form-input::placeholder { color: #9aabcc; }
+
+    .card-field-wrap {
+      position: relative;
+    }
+    .card-brands {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+    .card-brand {
+      width: 32px;
+      height: 20px;
+      border-radius: 3px;
+      background: #f0f4f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      font-weight: 800;
+      color: var(--text-2);
+    }
+    .card-brand.visa { background: #1a1f71; color: #fff; }
+    .card-brand.mc { background: #eb001b; color: #fff; }
+
+    .trial-callout {
+      background: linear-gradient(135deg, rgba(22,163,74,0.06) 0%, rgba(37,99,235,0.04) 100%);
+      border: 1.5px solid rgba(22,163,74,0.25);
+      border-radius: 12px;
+      padding: 16px 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .trial-callout-icon {
+      width: 32px; height: 32px;
+      background: rgba(22,163,74,0.1);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: #16a34a;
+      flex-shrink: 0;
+    }
+    .trial-callout-title { font-size: 0.875rem; font-weight: 700; color: var(--text-1); margin-bottom: 2px; }
+    .trial-callout-desc { font-size: 0.8rem; color: var(--text-2); line-height: 1.5; }
+
+    .btn-checkout {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 15px 24px;
+      background: var(--blue); color: #fff;
+      border: none; border-radius: 12px;
+      font-size: 1rem; font-weight: 700;
+      cursor: pointer;
+      transition: background 0.18s, transform 0.15s;
+      font-family: inherit;
+    }
+    .btn-checkout:hover { background: var(--blue-h); transform: translateY(-1px); }
+
+    .checkout-legal {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-2);
+      margin-top: 12px;
+      line-height: 1.6;
+    }
+    .checkout-legal a { color: var(--blue); text-decoration: none; }
+
+    /* Order summary */
+    .order-summary {
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 32px 28px;
+      box-shadow: 0 4px 24px rgba(37,99,235,0.06);
+      position: sticky;
+      top: 24px;
+    }
+    .order-title { font-size: 1rem; font-weight: 700; color: var(--text-1); margin-bottom: 20px; }
+
+    .plan-display {
+      background: var(--bg-2);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-bottom: 20px;
+    }
+    .plan-display-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+    .plan-display-name { font-weight: 700; font-size: 0.95rem; color: var(--text-1); }
+    .plan-display-badge {
+      font-size: 0.68rem; font-weight: 700;
+      color: var(--blue); background: rgba(37,99,235,0.08);
+      border-radius: 4px; padding: 2px 7px;
+    }
+    .plan-display-price {
+      font-size: 1.5rem; font-weight: 800; color: var(--text-1);
+      margin: 8px 0 4px;
+    }
+    .plan-display-price span { font-size: 0.85rem; font-weight: 500; color: var(--text-2); }
+    .plan-display-sub { font-size: 0.78rem; color: var(--text-2); }
+
+    .order-line {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.85rem; color: var(--text-2);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .order-line:last-of-type { border-bottom: none; }
+    .order-line strong { color: var(--text-1); }
+
+    .order-total {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 1rem; font-weight: 700; color: var(--text-1);
+      padding: 16px 0 0;
+      margin-top: 4px;
+      border-top: 2px solid var(--border);
+    }
+    .order-total-due {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #16a34a;
+    }
+
+    .order-features {
+      display: flex; flex-direction: column; gap: 8px;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .order-feature {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.82rem; color: var(--text-2);
+    }
+    .order-feature svg { color: #16a34a; flex-shrink: 0; }
+
+    .change-plan {
+      display: block;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--blue);
+      text-decoration: none;
+      margin-top: 16px;
+      font-weight: 500;
+    }
+    .change-plan:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      .checkout-layout { grid-template-columns: 1fr; }
+      .order-summary { position: static; }
+      .checkout-card { padding: 28px 20px; }
+    }
+    @media (max-width: 480px) {
+      .form-row-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="auth-page">
+
+  <nav class="auth-nav">
+    <div class="auth-nav-inner">
+      <a href="index.html" class="auth-nav-logo">
+        <img src="assets/logo-iconwithname.svg" alt="STOAIX" />
+      </a>
+      <div class="checkout-secure">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+        </svg>
+        Secure checkout · SSL encrypted
+      </div>
+    </div>
+  </nav>
+
+  <main class="checkout-main">
+    <div class="checkout-layout">
+
+      <!-- Payment form -->
+      <div class="checkout-card">
+        <div class="checkout-section-title">Payment details</div>
+
+        <div class="trial-callout">
+          <div class="trial-callout-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div>
+            <div class="trial-callout-title">You won't be charged today</div>
+            <div class="trial-callout-desc">Your 10-day free trial starts now. We'll only charge you after your trial ends. Cancel any time before then — no questions asked.</div>
+          </div>
+        </div>
+
+        <form class="checkout-form" style="margin-top: 24px;" action="#" method="POST">
+          <div class="form-group">
+            <label class="form-label" for="card_name">Name on card</label>
+            <input class="form-input" type="text" id="card_name" name="card_name" placeholder="Jane Smith" required autocomplete="cc-name" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="card_number">Card number</label>
+            <div class="card-field-wrap">
+              <input class="form-input" type="text" id="card_number" name="card_number" placeholder="1234 5678 9012 3456" required autocomplete="cc-number" maxlength="19" style="padding-right: 96px;" />
+              <div class="card-brands">
+                <div class="card-brand visa">VISA</div>
+                <div class="card-brand mc">MC</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label" for="card_expiry">Expiry date</label>
+              <input class="form-input" type="text" id="card_expiry" name="card_expiry" placeholder="MM / YY" required autocomplete="cc-exp" maxlength="7" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="card_cvc">CVC</label>
+              <input class="form-input" type="text" id="card_cvc" name="card_cvc" placeholder="123" required autocomplete="cc-csc" maxlength="4" />
+            </div>
+          </div>
+
+          <div class="checkout-section-title" style="margin-top: 8px;">Billing address</div>
+
+          <div class="form-group">
+            <label class="form-label" for="country">Country</label>
+            <select class="form-input" id="country" name="country" required>
+              <option value="">Select country</option>
+              <option value="gb" selected>United Kingdom</option>
+              <option value="us">United States</option>
+              <option value="tr">Turkey</option>
+              <option value="de">Germany</option>
+              <option value="fr">France</option>
+              <option value="ae">UAE</option>
+              <option value="au">Australia</option>
+              <option value="ca">Canada</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="postal">Postal / ZIP code</label>
+            <input class="form-input" type="text" id="postal" name="postal" placeholder="EC1A 1BB" autocomplete="postal-code" />
+          </div>
+
+          <button type="submit" class="btn-checkout">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Start my free trial
+          </button>
+
+          <div class="checkout-legal">
+            By starting your trial you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.<br />
+            Subscription auto-renews after trial. Cancel anytime.
+          </div>
+        </form>
+      </div>
+
+      <!-- Order summary -->
+      <div class="order-summary">
+        <div class="order-title">Order summary</div>
+
+        <div class="plan-display" id="planDisplay">
+          <div class="plan-display-header">
+            <span class="plan-display-name">Advanced Plan</span>
+            <span class="plan-display-badge">Most popular</span>
+          </div>
+          <div class="plan-display-price">$299<span> / month</span></div>
+          <div class="plan-display-sub">Billed monthly after 10-day trial</div>
+        </div>
+
+        <div class="order-line">
+          <span>Advanced Plan (monthly)</span>
+          <strong>$299.00</strong>
+        </div>
+        <div class="order-line">
+          <span>Trial discount (10 days)</span>
+          <strong style="color: #16a34a;">-$99.67</strong>
+        </div>
+        <div class="order-line">
+          <span>Setup fee</span>
+          <strong style="color: #16a34a;">FREE</strong>
+        </div>
+
+        <div class="order-total">
+          <div>
+            <div>Due today</div>
+            <div class="order-total-due">Charged after trial ends</div>
+          </div>
+          <div>$0.00</div>
+        </div>
+
+        <div class="order-features">
+          <div class="order-feature">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Voice AI — inbound + outbound
+          </div>
+          <div class="order-feature">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            WhatsApp &amp; web chat
+          </div>
+          <div class="order-feature">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            750 minutes / month included
+          </div>
+          <div class="order-feature">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            15+ languages · CRM · Lead scoring
+          </div>
+          <div class="order-feature">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Zapier / Make / Webhook
+          </div>
+          <div class="order-feature">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Cancel before trial ends — no charge
+          </div>
+        </div>
+
+        <a href="signup.html" class="change-plan">Change plan</a>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    // Read plan from URL params and update order summary
+    const params = new URLSearchParams(window.location.search);
+    const plan = params.get('plan') || 'advanced';
+
+    const plans = {
+      lite:     { name: 'Lite Plan',     price: 79,  badge: '',             features: ['WhatsApp AI chatbot','Web chat widget','Knowledge base (30 FAQs)','CRM lite','2 users','Email support'] },
+      plus:     { name: 'Plus Plan',     price: 149, badge: '',             features: ['Everything in Lite','Voice AI — inbound','300 min/month','Call recording + transcript','5 users','Priority support'] },
+      advanced: { name: 'Advanced Plan', price: 299, badge: 'Most popular', features: ['Voice AI — inbound + outbound','WhatsApp & web chat','750 minutes/month','15+ languages · CRM · Lead scoring','Zapier / Make / Webhook','Cancel before trial — no charge'] },
+      agency:   { name: 'Agency Plan',   price: 499, badge: '',             features: ['Everything in Advanced','Multi-org management','Reseller dashboard','White-label ready','Unlimited users','Priority tech support'] }
+    };
+
+    const p = plans[plan] || plans.advanced;
+    const trialDiscount = (p.price / 30 * 10).toFixed(2);
+
+    const display = document.getElementById('planDisplay');
+    if (display) {
+      display.querySelector('.plan-display-name').textContent = p.name;
+      const badge = display.querySelector('.plan-display-badge');
+      if (p.badge) { badge.textContent = p.badge; badge.style.display = ''; }
+      else { badge.style.display = 'none'; }
+      display.querySelector('.plan-display-price').innerHTML = `$${p.price}<span> / month</span>`;
+    }
+
+    // Update line items
+    const lines = document.querySelectorAll('.order-line strong');
+    if (lines[0]) lines[0].textContent = `$${p.price}.00`;
+    if (lines[1]) lines[1].textContent = `-$${trialDiscount}`;
+
+    // Update features list
+    const featureList = document.querySelector('.order-features');
+    if (featureList) {
+      featureList.innerHTML = p.features.map(f => `
+        <div class="order-feature">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          ${f}
+        </div>`).join('');
+    }
+  </script>
+</body>
+</html>
