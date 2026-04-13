@@ -2147,3 +2147,9 @@ ul { list-style: none; }
   .footer-cols { grid-template-columns: 1fr; }
   .channels-tab-nav { flex-wrap: wrap; }
 }
+
+/* ─── Language toggle ────────────────────────────────────── */
+.lang-toggle { display: flex; align-items: center; gap: 4px; margin-right: 8px; }
+.lang-btn { background: none; border: none; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; color: var(--text-2); cursor: pointer; padding: 2px 4px; border-radius: 4px; transition: color 0.2s; }
+.lang-btn:hover, .lang-btn.lang-active { color: var(--blue); }
+.lang-sep { font-size: 0.72rem; color: var(--text-2); opacity: 0.5; }
