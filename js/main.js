@@ -266,6 +266,21 @@
   const cy = H / 2;
 
   let t = 0;
+  let isVisible = true;
+  let rafId = null;
+
+  // Pause when tab is hidden — saves CPU/battery
+  document.addEventListener('visibilitychange', () => {
+    isVisible = document.visibilityState === 'visible';
+    if (isVisible && !rafId) rafId = requestAnimationFrame(drawFrame);
+  });
+
+  // Pause when canvas scrolls out of viewport
+  const observer = new IntersectionObserver(entries => {
+    isVisible = entries[0].isIntersecting;
+    if (isVisible && !rafId) rafId = requestAnimationFrame(drawFrame);
+  }, { threshold: 0 });
+  observer.observe(canvas);
 
   const rings = [
     { offset: 0,    speed: 0.35, color: 'rgba(59,130,246,'  },
@@ -274,6 +289,8 @@
   ];
 
   function drawFrame() {
+    rafId = null;
+    if (!isVisible) return;
     ctx.clearRect(0, 0, W, H);
 
     // Background glow
@@ -333,8 +350,8 @@
     ctx.fill();
 
     t += 0.012;
-    requestAnimationFrame(drawFrame);
+    rafId = requestAnimationFrame(drawFrame);
   }
 
-  drawFrame();
+  rafId = requestAnimationFrame(drawFrame);
 })();

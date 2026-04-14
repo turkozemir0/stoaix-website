@@ -55,7 +55,9 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
-img, svg { display: block; max-width: 100%; }
+img, svg { display: block; max-width: 100%; height: auto; }
+/* Prevent layout shift while images load */
+img[loading="lazy"] { content-visibility: auto; }
 a { text-decoration: none; color: inherit; }
 button { cursor: pointer; font: inherit; border: none; background: none; }
 ul { list-style: none; }
@@ -476,7 +478,8 @@ ul { list-style: none; }
   top: 0; right: -4%;
   width: 62%;
   height: 115%;
-  background: url('../assets/Hero Gradient V3 - 37.png') right top / cover no-repeat;
+  background: radial-gradient(ellipse at 70% 30%, rgba(59,130,246,0.35) 0%, rgba(99,102,241,0.2) 40%, transparent 75%),
+              radial-gradient(ellipse at 90% 70%, rgba(37,99,235,0.25) 0%, transparent 60%);
   opacity: 0.5;
   pointer-events: none;
 }

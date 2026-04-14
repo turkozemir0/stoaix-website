@@ -6,6 +6,10 @@
   <title>AI Receptionist for Healthcare Clinics — STOAIX</title>
   <meta name="description" content="Set up your AI voice receptionist in minutes. Answers calls 24/7 in Turkish, English & Arabic. Built for hair transplant, dental, and aesthetic clinics. 10-day free trial." />
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Performance: preconnect to external origins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
   <style>
 
     /* ── Hero ──────────────────────────────────────────────── */
@@ -767,7 +771,7 @@
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
       <a href="/" class="nav-logo">
-        <img src="assets/logo-iconwithname.svg" class="nav-logo-wordmark" alt="STOAIX" />
+        <img fetchpriority="high" src="assets/logo-iconwithname.svg" class="nav-logo-wordmark" alt="STOAIX" />
       </a>
 
       <div class="nav-links">
@@ -1407,7 +1411,7 @@
     <div class="container footer-inner">
       <div class="footer-brand">
         <a href="/" class="nav-logo">
-          <img src="assets/logo-iconwithname.svg" class="nav-logo-wordmark" alt="STOAIX" />
+          <img fetchpriority="high" src="assets/logo-iconwithname.svg" class="nav-logo-wordmark" alt="STOAIX" />
         </a>
         <p class="footer-tagline">AI receptionist for any business. Answer every call, handle every message, convert every lead.</p>
         <div class="footer-socials">
@@ -1475,7 +1479,7 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script defer src="js/main.js"></script>
   <script>
     document.querySelectorAll('.hc-faq-q').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -1486,6 +1490,6 @@
       });
     });
   </script>
-<script src="js/i18n.js"></script>
+<script defer src="js/i18n.js"></script>
 </body>
 </html>
