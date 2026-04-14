@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Affiliates — STOAIX</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <style>
+    body { background: var(--bg-2); }
+    .admin-layout { display: flex; min-height: 100vh; }
+
+    .admin-sidebar {
+      width: 220px; flex-shrink: 0;
+      background: #0c1427; color: #fff;
+      display: flex; flex-direction: column;
+      position: fixed; top: 0; left: 0; bottom: 0; z-index: 50;
+    }
+    .admin-sidebar-logo {
+      padding: 24px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .admin-sidebar-logo img { height: 24px; filter: brightness(0) invert(1); }
+    .admin-sidebar-badge {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: #f59e0b;
+      background: rgba(245,158,11,0.15); padding: 3px 8px;
+      border-radius: 6px; margin-top: 6px; display: inline-block;
+    }
+    .admin-nav { flex: 1; padding: 16px 12px; }
+    .admin-nav-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 12px; border-radius: 8px;
+      font-size: 0.88rem; font-weight: 500; color: rgba(255,255,255,0.6);
+      cursor: pointer; transition: background 0.15s, color 0.15s;
+      margin-bottom: 2px;
+    }
+    .admin-nav-item:hover { background: rgba(255,255,255,0.08); color: #fff; }
+    .admin-nav-item.active { background: rgba(255,255,255,0.12); color: #fff; }
+    .admin-logout {
+      padding: 16px 12px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.85rem; color: rgba(255,255,255,0.5);
+      cursor: pointer; display: flex; align-items: center; gap: 8px;
+    }
+    .admin-logout:hover { color: #ef4444; }
+
+    .admin-main {
+      flex: 1; margin-left: 220px; padding: 32px;
+    }
+    .admin-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 28px;
+    }
+    .admin-header-title { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .admin-header-sub { font-size: 0.9rem; color: var(--text-2); margin-top: 2px; }
+
+    .admin-stats {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 16px; margin-bottom: 28px;
+    }
+    .admin-stat {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 14px; padding: 20px;
+    }
+    .admin-stat-label {
+      font-size: 0.78rem; font-weight: 600;
+      color: var(--text-2); text-transform: uppercase;
+      letter-spacing: 0.04em; margin-bottom: 8px;
+    }
+    .admin-stat-val {
+      font-size: 1.9rem; font-weight: 700; color: var(--text); line-height: 1;
+    }
+
+    .table-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 14px; padding: 24px; margin-bottom: 24px;
+    }
+    .table-card-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .table-card-title { font-size: 1rem; font-weight: 700; color: var(--text); }
+    .csv-btn {
+      padding: 8px 16px; background: var(--bg-2);
+      border: 1px solid var(--border); border-radius: 8px;
+      font-size: 0.82rem; font-weight: 600; color: var(--text);
+      cursor: pointer; transition: background 0.15s;
+    }
+    .csv-btn:hover { background: var(--border); }
+
+    .data-table { width: 100%; border-collapse: collapse; }
+    .data-table th {
+      text-align: left; font-size: 0.75rem; font-weight: 600;
+      color: var(--text-2); text-transform: uppercase; letter-spacing: 0.04em;
+      padding: 8px 12px; border-bottom: 1px solid var(--border);
+    }
+    .data-table td {
+      padding: 12px; font-size: 0.87rem; color: var(--text);
+      border-bottom: 1px solid var(--border);
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:hover td { background: var(--bg-2); }
+
+    .status-badge {
+      display: inline-block; padding: 3px 10px;
+      border-radius: 9999px; font-size: 0.73rem; font-weight: 600;
+    }
+    .status-badge.active   { background: #dcfce7; color: #16a34a; }
+    .status-badge.suspended { background: #fee2e2; color: #dc2626; }
+    .status-badge.pending  { background: #fef9c3; color: #a16207; }
+    .status-badge.approved { background: #dcfce7; color: #16a34a; }
+    .status-badge.paid     { background: #e0e7ff; color: #4338ca; }
+
+    .tier-chip {
+      display: inline-block; padding: 2px 8px;
+      border-radius: 9999px; font-size: 0.73rem; font-weight: 600;
+    }
+    .tier-chip.starter { background: var(--blue-tint); color: var(--blue); }
+    .tier-chip.growth  { background: #f3e8ff; color: #7c3aed; }
+    .tier-chip.pro     { background: #fef9c3; color: #a16207; }
+    .tier-chip.wl      { background: #dcfce7; color: #16a34a; }
+
+    .action-btn {
+      padding: 4px 10px; border-radius: 6px;
+      font-size: 0.78rem; font-weight: 600; cursor: pointer;
+      border: none; margin-right: 4px; transition: opacity 0.15s;
+    }
+    .action-btn:hover { opacity: 0.8; }
+    .action-btn.approve { background: #dcfce7; color: #16a34a; }
+    .action-btn.paid    { background: #e0e7ff; color: #4338ca; }
+
+    /* Login overlay */
+    .admin-login-overlay {
+      position: fixed; inset: 0;
+      background: var(--bg-2);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 200;
+    }
+    .admin-login-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 16px; padding: 40px;
+      width: 100%; max-width: 380px;
+      text-align: center;
+    }
+    .admin-login-card h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
+    .admin-login-card p { font-size: 0.88rem; color: var(--text-2); margin-bottom: 24px; }
+    .admin-login-card input {
+      width: 100%; padding: 12px 14px;
+      border: 1.5px solid var(--border); border-radius: 10px;
+      font-size: 0.95rem; outline: none; margin-bottom: 14px;
+      transition: border-color 0.2s;
+    }
+    .admin-login-card input:focus { border-color: var(--blue); }
+    .admin-login-card button {
+      width: 100%; padding: 12px;
+      background: #0c1427; color: #fff;
+      border: none; border-radius: 10px;
+      font-size: 0.95rem; font-weight: 600; cursor: pointer;
+    }
+    .admin-login-error {
+      font-size: 0.83rem; color: #dc2626; margin-top: 10px; display: none;
+    }
+
+    @media (max-width: 900px) {
+      .admin-sidebar { display: none; }
+      .admin-main { margin-left: 0; padding: 16px; }
+      .admin-stats { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Admin login overlay (shown until auth) -->
+<div class="admin-login-overlay" id="loginOverlay">
+  <div class="admin-login-card">
+    <h2>Admin Access</h2>
+    <p>Enter your admin password to continue</p>
+    <input type="password" id="adminPassword" placeholder="Admin password" />
+    <button id="adminLoginBtn">Sign in</button>
+    <div class="admin-login-error" id="loginError">Incorrect password</div>
+  </div>
+</div>
+
+<div class="admin-layout" id="adminContent" style="display:none">
+
+  <aside class="admin-sidebar">
+    <div class="admin-sidebar-logo">
+      <img src="../assets/stoaix-logo.png" alt="STOAIX" />
+      <div class="admin-sidebar-badge">Admin</div>
+    </div>
+    <nav class="admin-nav">
+      <div class="admin-nav-item active" data-tab="affiliates">
+        <span>👥</span> Affiliates
+      </div>
+      <div class="admin-nav-item" data-tab="commissions">
+        <span>💰</span> Commissions
+      </div>
+    </nav>
+    <div class="admin-logout" id="adminLogout">
+      <span>🚪</span> Sign out
+    </div>
+  </aside>
+
+  <main class="admin-main">
+
+    <!-- Affiliates tab -->
+    <div id="tab-affiliates">
+      <div class="admin-header">
+        <div>
+          <div class="admin-header-title">Affiliates</div>
+          <div class="admin-header-sub">All registered partners</div>
+        </div>
+        <button class="csv-btn" id="exportAffiliates">⬇ Export CSV</button>
+      </div>
+
+      <div class="admin-stats">
+        <div class="admin-stat">
+          <div class="admin-stat-label">Total Partners</div>
+          <div class="admin-stat-val" id="totalAffiliates">—</div>
+        </div>
+        <div class="admin-stat">
+          <div class="admin-stat-label">Active Clients (all)</div>
+          <div class="admin-stat-val" id="totalActiveClients">—</div>
+        </div>
+        <div class="admin-stat">
+          <div class="admin-stat-label">Total Commissions</div>
+          <div class="admin-stat-val" id="totalCommissions">—</div>
+        </div>
+        <div class="admin-stat">
+          <div class="admin-stat-label">Pending Payout</div>
+          <div class="admin-stat-val" id="pendingCommissions">—</div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div id="affiliatesTable"></div>
+      </div>
+    </div>
+
+    <!-- Commissions tab -->
+    <div id="tab-commissions" style="display:none">
+      <div class="admin-header">
+        <div>
+          <div class="admin-header-title">Commissions</div>
+          <div class="admin-header-sub">Review and approve partner commissions</div>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <select id="statusFilter" style="padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-size:0.85rem;cursor:pointer;">
+            <option value="">All statuses</option>
+            <option value="pending">Pending</option>
+            <option value="approved">Approved</option>
+            <option value="paid">Paid</option>
+          </select>
+        </div>
+      </div>
+      <div class="table-card">
+        <div id="commissionsTable"></div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+  const ADMIN_TOKEN_KEY = 'stoaix_admin_token'
+
+  function getAdminToken() { return localStorage.getItem(ADMIN_TOKEN_KEY) }
+
+  function adminLogout() {
+    localStorage.removeItem(ADMIN_TOKEN_KEY)
+    document.getElementById('adminContent').style.display = 'none'
+    document.getElementById('loginOverlay').style.display = 'flex'
+  }
+
+  // Admin login via /api/affiliate/login with admin account
+  document.getElementById('adminLoginBtn').addEventListener('click', async () => {
+    const password = document.getElementById('adminPassword').value
+    if (!password) return
+
+    const res = await fetch('/api/affiliate/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: 'admin@stoaix.com', password }),
+    })
+    const data = await res.json()
+
+    if (res.ok && data.affiliate?.is_admin) {
+      localStorage.setItem(ADMIN_TOKEN_KEY, data.token)
+      document.getElementById('loginOverlay').style.display = 'none'
+      document.getElementById('adminContent').style.display = 'flex'
+      loadAdminData()
+    } else {
+      document.getElementById('loginError').style.display = 'block'
+    }
+  })
+  document.getElementById('adminPassword').addEventListener('keydown', e => {
+    if (e.key === 'Enter') document.getElementById('adminLoginBtn').click()
+  })
+
+  document.getElementById('adminLogout').addEventListener('click', adminLogout)
+
+  // Tab navigation
+  document.querySelectorAll('.admin-nav-item').forEach(item => {
+    item.addEventListener('click', () => {
+      document.querySelectorAll('.admin-nav-item').forEach(n => n.classList.remove('active'))
+      item.classList.add('active')
+      const tab = item.dataset.tab
+      document.querySelectorAll('[id^="tab-"]').forEach(t => t.style.display = 'none')
+      document.getElementById(`tab-${tab}`).style.display = 'block'
+      if (tab === 'commissions') loadCommissions()
+    })
+  })
+
+  document.getElementById('statusFilter').addEventListener('change', loadCommissions)
+
+  async function adminFetch(path, opts = {}) {
+    const token = getAdminToken()
+    const res = await fetch(path, {
+      ...opts,
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`,
+        ...(opts.headers || {}),
+      },
+    })
+    if (res.status === 401 || res.status === 403) { adminLogout(); return null }
+    return res.json()
+  }
+
+  function formatCurrency(v) {
+    return '$' + parseFloat(v || 0).toLocaleString('en-US', { minimumFractionDigits: 2 })
+  }
+  function formatDate(iso) {
+    if (!iso) return '—'
+    return new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
+  }
+  function planLabel(p) {
+    return { standard: 'Standard', wl_basic: 'WL Basic', wl_pro: 'WL Pro' }[p] || p
+  }
+
+  function tierHtml(tier, plan) {
+    if (['wl_basic', 'wl_pro'].includes(plan)) return `<span class="tier-chip wl">WL · 40%</span>`
+    const map = { starter: 'Starter 10%', growth: 'Growth 20%', pro: 'Pro 30%' }
+    return `<span class="tier-chip ${tier}">${map[tier] || tier}</span>`
+  }
+
+  let affiliatesData = []
+
+  async function loadAdminData() {
+    const data = await adminFetch('/api/admin/affiliates')
+    if (!data) return
+
+    affiliatesData = data.affiliates || []
+    const totalActive = affiliatesData.reduce((s, a) => s + (a.activeClients || 0), 0)
+    const totalComm = affiliatesData.reduce((s, a) => s + parseFloat(a.totalCommissions || 0), 0)
+    const pending = affiliatesData.reduce((s, a) => s + parseFloat(a.pendingCommissions || 0), 0)
+
+    document.getElementById('totalAffiliates').textContent = affiliatesData.length
+    document.getElementById('totalActiveClients').textContent = totalActive
+    document.getElementById('totalCommissions').textContent = formatCurrency(totalComm)
+    document.getElementById('pendingCommissions').textContent = formatCurrency(pending)
+
+    renderAffiliatesTable(affiliatesData)
+  }
+
+  function renderAffiliatesTable(list) {
+    const el = document.getElementById('affiliatesTable')
+    if (!list.length) {
+      el.innerHTML = '<div style="text-align:center;padding:32px;color:var(--text-3)">No affiliates yet</div>'
+      return
+    }
+    el.innerHTML = `<table class="data-table">
+      <thead><tr>
+        <th>Name</th><th>Email</th><th>Plan</th><th>Tier</th>
+        <th>Active Clients</th><th>Total Commissions</th>
+        <th>Status</th><th>Joined</th>
+      </tr></thead>
+      <tbody>${list.map(a => `<tr>
+        <td><strong>${a.name}</strong></td>
+        <td><a href="mailto:${a.email}" style="color:var(--blue)">${a.email}</a></td>
+        <td>${planLabel(a.plan)}</td>
+        <td>${tierHtml(a.tier, a.plan)}</td>
+        <td>${a.activeClients}</td>
+        <td>${formatCurrency(a.totalCommissions)}</td>
+        <td><span class="status-badge ${a.status}">${a.status}</span></td>
+        <td>${formatDate(a.created_at)}</td>
+      </tr>`).join('')}</tbody>
+    </table>`
+  }
+
+  // Export CSV
+  document.getElementById('exportAffiliates').addEventListener('click', () => {
+    if (!affiliatesData.length) return
+    const headers = ['Name', 'Email', 'Plan', 'Tier', 'Active Clients', 'Total Commissions', 'Status', 'Joined']
+    const rows = affiliatesData.map(a => [
+      a.name, a.email, a.plan, a.tier,
+      a.activeClients, a.totalCommissions, a.status, formatDate(a.created_at),
+    ])
+    const csv = [headers, ...rows].map(r => r.map(v => `"${v}"`).join(',')).join('\n')
+    const blob = new Blob([csv], { type: 'text/csv' })
+    const url = URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    link.href = url
+    link.download = `stoaix-affiliates-${new Date().toISOString().slice(0, 10)}.csv`
+    link.click()
+    URL.revokeObjectURL(url)
+  })
+
+  let commissionsData = []
+
+  async function loadCommissions() {
+    const status = document.getElementById('statusFilter').value
+    const qs = status ? `?status=${status}` : ''
+    const data = await adminFetch(`/api/admin/commissions${qs}`)
+    if (!data) return
+    commissionsData = data.commissions || []
+    renderCommissionsTable(commissionsData)
+  }
+
+  function renderCommissionsTable(list) {
+    const el = document.getElementById('commissionsTable')
+    if (!list.length) {
+      el.innerHTML = '<div style="text-align:center;padding:32px;color:var(--text-3)">No commissions found</div>'
+      return
+    }
+    el.innerHTML = `<table class="data-table">
+      <thead><tr>
+        <th>Partner</th><th>Period</th><th>Amount</th><th>Rate</th>
+        <th>Status</th><th>Date</th><th>Actions</th>
+      </tr></thead>
+      <tbody>${list.map(c => `<tr>
+        <td>
+          <strong>${c.affiliates?.name || '—'}</strong><br/>
+          <span style="font-size:0.78rem;color:var(--text-2)">${c.affiliates?.email || ''}</span>
+        </td>
+        <td>${c.period_month}</td>
+        <td><strong>${formatCurrency(c.amount)}</strong></td>
+        <td>${c.commission_rate}%</td>
+        <td><span class="status-badge ${c.status}">${c.status.charAt(0).toUpperCase() + c.status.slice(1)}</span></td>
+        <td>${formatDate(c.created_at)}</td>
+        <td>
+          ${c.status === 'pending' ? `<button class="action-btn approve" onclick="updateCommission('${c.id}','approved')">Approve</button>` : ''}
+          ${c.status === 'approved' ? `<button class="action-btn paid" onclick="updateCommission('${c.id}','paid')">Mark Paid</button>` : ''}
+        </td>
+      </tr>`).join('')}</tbody>
+    </table>`
+  }
+
+  async function updateCommission(id, status) {
+    const data = await adminFetch(`/api/admin/commissions?id=${id}`, {
+      method: 'PATCH',
+      body: JSON.stringify({ status }),
+    })
+    if (data) loadCommissions()
+  }
+
+  // Check if already authed
+  if (getAdminToken()) {
+    document.getElementById('loginOverlay').style.display = 'none'
+    document.getElementById('adminContent').style.display = 'flex'
+    loadAdminData()
+  }
+</script>
+</body>
+</html>

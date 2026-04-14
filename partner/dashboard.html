@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Partner Dashboard — STOAIX</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <style>
+    body { background: var(--bg-2); }
+
+    .dash-layout { display: flex; min-height: 100vh; }
+
+    /* ── Sidebar ── */
+    .dash-sidebar {
+      width: 240px; flex-shrink: 0;
+      background: #fff;
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column;
+      position: fixed; top: 0; left: 0; bottom: 0; z-index: 50;
+    }
+    .dash-sidebar-logo {
+      padding: 24px 20px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .dash-sidebar-logo img { height: 26px; }
+    .dash-sidebar-badge {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em;
+      text-transform: uppercase; color: var(--blue);
+      background: var(--blue-tint); padding: 3px 8px;
+      border-radius: 6px; margin-top: 6px; display: inline-block;
+    }
+    .dash-nav { flex: 1; padding: 16px 12px; }
+    .dash-nav-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 12px; border-radius: 8px;
+      font-size: 0.9rem; font-weight: 500; color: var(--text-2);
+      cursor: pointer; transition: background 0.15s, color 0.15s;
+      margin-bottom: 2px;
+    }
+    .dash-nav-item:hover { background: var(--bg-2); color: var(--text); }
+    .dash-nav-item.active { background: var(--blue-tint); color: var(--blue); font-weight: 600; }
+    .dash-nav-icon { font-size: 1rem; width: 20px; text-align: center; }
+    .dash-sidebar-footer {
+      padding: 16px 12px;
+      border-top: 1px solid var(--border);
+    }
+    .dash-user {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 12px; border-radius: 8px;
+    }
+    .dash-user-avatar {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--blue); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; font-weight: 700; flex-shrink: 0;
+    }
+    .dash-user-name { font-size: 0.85rem; font-weight: 600; color: var(--text); }
+    .dash-user-plan { font-size: 0.75rem; color: var(--text-2); }
+    .dash-logout {
+      display: flex; align-items: center; gap: 8px;
+      padding: 9px 12px; border-radius: 8px;
+      font-size: 0.85rem; color: var(--text-2);
+      cursor: pointer; margin-top: 4px;
+      transition: background 0.15s;
+    }
+    .dash-logout:hover { background: #fef2f2; color: #dc2626; }
+
+    /* ── Main content ── */
+    .dash-main {
+      flex: 1; margin-left: 240px;
+      padding: 32px;
+      max-width: 1100px;
+    }
+    .dash-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 28px;
+    }
+    .dash-header-title { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .dash-header-sub { font-size: 0.9rem; color: var(--text-2); margin-top: 2px; }
+
+    /* ── Stats grid ── */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .stat-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+    }
+    .stat-label {
+      font-size: 0.8rem; font-weight: 600;
+      color: var(--text-2); text-transform: uppercase; letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+    .stat-value {
+      font-size: 1.8rem; font-weight: 700; color: var(--text);
+      line-height: 1;
+    }
+    .stat-sub {
+      font-size: 0.8rem; color: var(--text-3); margin-top: 4px;
+    }
+    .stat-badge {
+      display: inline-block; margin-top: 6px;
+      font-size: 0.75rem; font-weight: 600; padding: 2px 8px;
+      border-radius: 9999px;
+    }
+    .stat-badge.green { background: var(--green-dim); color: var(--green); }
+    .stat-badge.blue { background: var(--blue-tint); color: var(--blue); }
+
+    /* ── Referral link box ── */
+    .link-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 28px;
+    }
+    .link-box-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .link-box-title { font-size: 1rem; font-weight: 700; color: var(--text); }
+    .link-row {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .link-input {
+      flex: 1; padding: 11px 16px;
+      background: var(--bg-2); border: 1.5px solid var(--border);
+      border-radius: 10px; font-size: 0.92rem; color: var(--text-2);
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      cursor: default; outline: none;
+    }
+    .copy-btn {
+      padding: 11px 18px;
+      background: var(--blue); color: #fff;
+      border: none; border-radius: 10px;
+      font-size: 0.88rem; font-weight: 600;
+      cursor: pointer; transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .copy-btn:hover { background: var(--blue-h); }
+    .copy-btn.copied { background: var(--green); }
+    .link-note { font-size: 0.8rem; color: var(--text-3); margin-top: 10px; }
+
+    /* ── Section card ── */
+    .section-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .section-title {
+      font-size: 1rem; font-weight: 700; color: var(--text);
+      margin-bottom: 16px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .section-empty {
+      text-align: center; padding: 32px;
+      color: var(--text-3); font-size: 0.9rem;
+    }
+
+    /* ── Table ── */
+    .data-table { width: 100%; border-collapse: collapse; }
+    .data-table th {
+      text-align: left; font-size: 0.78rem; font-weight: 600;
+      color: var(--text-2); text-transform: uppercase; letter-spacing: 0.04em;
+      padding: 8px 12px; border-bottom: 1px solid var(--border);
+    }
+    .data-table td {
+      padding: 12px; font-size: 0.88rem; color: var(--text);
+      border-bottom: 1px solid var(--border);
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:hover td { background: var(--bg-2); }
+    .status-badge {
+      display: inline-block; padding: 3px 10px;
+      border-radius: 9999px; font-size: 0.75rem; font-weight: 600;
+    }
+    .status-badge.pending  { background: #fef9c3; color: #a16207; }
+    .status-badge.approved { background: var(--green-dim); color: var(--green); }
+    .status-badge.paid     { background: #e0e7ff; color: #4338ca; }
+    .status-badge.active   { background: var(--green-dim); color: var(--green); }
+
+    /* ── Tier indicator ── */
+    .tier-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 12px; border-radius: 9999px;
+      font-size: 0.82rem; font-weight: 600;
+    }
+    .tier-chip.starter { background: var(--blue-tint); color: var(--blue); }
+    .tier-chip.growth  { background: #f3e8ff; color: #7c3aed; }
+    .tier-chip.pro     { background: #fef9c3; color: #a16207; }
+    .tier-chip.wl      { background: var(--green-dim); color: var(--green); }
+
+    /* ── Loading skeleton ── */
+    .skeleton { background: #e8edf5; border-radius: 8px; animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.5} }
+
+    /* ── Payout info form ── */
+    .payout-form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .payout-form .form-group { display: flex; flex-direction: column; gap: 6px; margin: 0; }
+    .payout-form label { font-size: 0.82rem; font-weight: 600; color: var(--text); }
+    .payout-form input, .payout-form select {
+      padding: 10px 14px; border: 1.5px solid var(--border);
+      border-radius: 10px; font-size: 0.9rem; color: var(--text);
+      background: var(--bg-2); outline: none;
+      transition: border-color 0.2s;
+    }
+    .payout-form input:focus, .payout-form select:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+    }
+    .save-btn {
+      padding: 10px 24px; background: var(--blue); color: #fff;
+      border: none; border-radius: 10px;
+      font-size: 0.9rem; font-weight: 600; cursor: pointer;
+      margin-top: 4px; transition: background 0.15s;
+    }
+    .save-btn:hover { background: var(--blue-h); }
+
+    @media (max-width: 900px) {
+      .dash-sidebar { display: none; }
+      .dash-main { margin-left: 0; padding: 20px 16px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .stats-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="dash-layout">
+
+  <!-- Sidebar -->
+  <aside class="dash-sidebar">
+    <div class="dash-sidebar-logo">
+      <a href="../"><img src="../assets/stoaix-logo.png" alt="STOAIX" /></a>
+      <div class="dash-sidebar-badge">Partner Portal</div>
+    </div>
+    <nav class="dash-nav">
+      <div class="dash-nav-item active" data-tab="overview">
+        <span class="dash-nav-icon">📊</span> Overview
+      </div>
+      <div class="dash-nav-item" data-tab="clients">
+        <span class="dash-nav-icon">👥</span> My Clients
+      </div>
+      <div class="dash-nav-item" data-tab="commissions">
+        <span class="dash-nav-icon">💰</span> Commissions
+      </div>
+      <div class="dash-nav-item" data-tab="payout">
+        <span class="dash-nav-icon">🏦</span> Payout Info
+      </div>
+    </nav>
+    <div class="dash-sidebar-footer">
+      <div class="dash-user">
+        <div class="dash-user-avatar" id="userAvatar">?</div>
+        <div>
+          <div class="dash-user-name" id="userName">Loading…</div>
+          <div class="dash-user-plan" id="userPlan">—</div>
+        </div>
+      </div>
+      <div class="dash-logout" id="logoutBtn">
+        <span>🚪</span> Sign out
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="dash-main">
+
+    <!-- Overview tab -->
+    <div id="tab-overview">
+      <div class="dash-header">
+        <div>
+          <div class="dash-header-title">Overview</div>
+          <div class="dash-header-sub" id="tierSubtitle">Loading your dashboard…</div>
+        </div>
+        <div id="tierChip"></div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Total Clicks</div>
+          <div class="stat-value" id="statClicks">—</div>
+          <div class="stat-sub">All time referral visits</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Active Clients</div>
+          <div class="stat-value" id="statConversions">—</div>
+          <div class="stat-sub">Paying clients right now</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">This Month</div>
+          <div class="stat-value" id="statThisMonth">—</div>
+          <div class="stat-sub">Commission earned</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Pending Payout</div>
+          <div class="stat-value" id="statPending">—</div>
+          <div class="stat-sub">Approved, awaiting transfer</div>
+        </div>
+      </div>
+
+      <!-- Referral link -->
+      <div class="link-box">
+        <div class="link-box-header">
+          <div class="link-box-title">🔗 Your Referral Link</div>
+          <span class="stat-badge blue" id="commRateBadge">—% commission</span>
+        </div>
+        <div class="link-row">
+          <input type="text" class="link-input" id="refLink" readonly value="Loading…" />
+          <button class="copy-btn" id="copyBtn">Copy link</button>
+        </div>
+        <div class="link-note">Share this link. Anyone who signs up via it is attributed to you for 90 days.</div>
+      </div>
+    </div>
+
+    <!-- Clients tab -->
+    <div id="tab-clients" style="display:none">
+      <div class="dash-header">
+        <div>
+          <div class="dash-header-title">My Clients</div>
+          <div class="dash-header-sub">Clients who signed up through your referral link</div>
+        </div>
+      </div>
+      <div class="section-card">
+        <div id="clientsTable"></div>
+      </div>
+    </div>
+
+    <!-- Commissions tab -->
+    <div id="tab-commissions" style="display:none">
+      <div class="dash-header">
+        <div>
+          <div class="dash-header-title">Commissions</div>
+          <div class="dash-header-sub">Your monthly commission history</div>
+        </div>
+      </div>
+      <div class="section-card">
+        <div id="commissionsTable"></div>
+      </div>
+    </div>
+
+    <!-- Payout tab -->
+    <div id="tab-payout" style="display:none">
+      <div class="dash-header">
+        <div>
+          <div class="dash-header-title">Payout Information</div>
+          <div class="dash-header-sub">We'll use these details when sending your monthly commission</div>
+        </div>
+      </div>
+      <div class="section-card">
+        <div id="payoutAlert" style="display:none;padding:12px 16px;border-radius:10px;margin-bottom:16px;font-size:0.88rem;"></div>
+        <form id="payoutForm">
+          <div class="payout-form">
+            <div class="form-group">
+              <label>Payment method</label>
+              <select id="payoutMethod" name="method">
+                <option value="bank_transfer">Bank Transfer (IBAN)</option>
+                <option value="wise">Wise</option>
+                <option value="paypal">PayPal</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Account holder name</label>
+              <input type="text" id="payoutName" name="holderName" placeholder="Jane Smith" />
+            </div>
+            <div class="form-group" style="grid-column:1/-1">
+              <label>IBAN / Account number / Email</label>
+              <input type="text" id="payoutAccount" name="account" placeholder="TR12 3456 7890 1234 5678 9012 34" />
+            </div>
+          </div>
+          <button type="submit" class="save-btn" style="margin-top:20px;">Save payout info</button>
+        </form>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+  const API_BASE = '/api/affiliate'
+  const TOKEN_KEY = 'stoaix_partner_token'
+
+  function getToken() { return localStorage.getItem(TOKEN_KEY) }
+
+  function logout() {
+    localStorage.removeItem(TOKEN_KEY)
+    localStorage.removeItem('stoaix_partner_slug')
+    window.location.href = '/partners/apply'
+  }
+
+  async function apiFetch(path, opts = {}) {
+    const token = getToken()
+    if (!token) { logout(); return null }
+    const res = await fetch(path, {
+      ...opts,
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`,
+        ...(opts.headers || {}),
+      },
+    })
+    if (res.status === 401) { logout(); return null }
+    return res.json()
+  }
+
+  // Tab navigation
+  document.querySelectorAll('.dash-nav-item').forEach(item => {
+    item.addEventListener('click', () => {
+      document.querySelectorAll('.dash-nav-item').forEach(n => n.classList.remove('active'))
+      item.classList.add('active')
+      const tab = item.dataset.tab
+      document.querySelectorAll('[id^="tab-"]').forEach(t => t.style.display = 'none')
+      document.getElementById(`tab-${tab}`).style.display = 'block'
+    })
+  })
+
+  document.getElementById('logoutBtn').addEventListener('click', logout)
+
+  // Copy referral link
+  document.getElementById('copyBtn').addEventListener('click', () => {
+    const link = document.getElementById('refLink').value
+    navigator.clipboard.writeText(link).then(() => {
+      const btn = document.getElementById('copyBtn')
+      btn.textContent = 'Copied!'
+      btn.classList.add('copied')
+      setTimeout(() => {
+        btn.textContent = 'Copy link'
+        btn.classList.remove('copied')
+      }, 2000)
+    })
+  })
+
+  function formatCurrency(val) {
+    return '$' + parseFloat(val).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+  }
+
+  function formatDate(iso) {
+    if (!iso) return '—'
+    return new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
+  }
+
+  function planLabel(plan) {
+    return { standard: 'Standard Affiliate', wl_basic: 'WL Basic', wl_pro: 'WL Pro' }[plan] || plan
+  }
+
+  function tierChipHtml(tier, plan) {
+    if (['wl_basic', 'wl_pro'].includes(plan)) {
+      return `<span class="tier-chip wl">⭐ White Label · 40%</span>`
+    }
+    const labels = { starter: ['starter', 'Starter · 10%'], growth: ['growth', 'Growth · 20%'], pro: ['pro', 'Pro · 30%'] }
+    const [cls, label] = labels[tier] || ['starter', tier]
+    return `<span class="tier-chip ${cls}">🏅 ${label}</span>`
+  }
+
+  function renderClientsTable(clients) {
+    const el = document.getElementById('clientsTable')
+    if (!clients.length) {
+      el.innerHTML = '<div class="section-empty">No active clients yet. Share your referral link to get started.</div>'
+      return
+    }
+    el.innerHTML = `<table class="data-table">
+      <thead><tr>
+        <th>Email</th>
+        <th>Joined</th>
+        <th>Status</th>
+      </tr></thead>
+      <tbody>${clients.map(c => `<tr>
+        <td>${c.lead_email || '—'}</td>
+        <td>${formatDate(c.converted_at)}</td>
+        <td><span class="status-badge active">Active</span></td>
+      </tr>`).join('')}</tbody>
+    </table>`
+  }
+
+  function renderCommissionsTable(commissions) {
+    const el = document.getElementById('commissionsTable')
+    if (!commissions.length) {
+      el.innerHTML = '<div class="section-empty">No commissions yet. Commissions appear here after your referrals start paying.</div>'
+      return
+    }
+    el.innerHTML = `<table class="data-table">
+      <thead><tr>
+        <th>Period</th>
+        <th>Amount</th>
+        <th>Rate</th>
+        <th>Status</th>
+        <th>Date</th>
+      </tr></thead>
+      <tbody>${commissions.map(c => `<tr>
+        <td>${c.period_month}</td>
+        <td><strong>${formatCurrency(c.amount)}</strong></td>
+        <td>${c.commission_rate}%</td>
+        <td><span class="status-badge ${c.status}">${c.status.charAt(0).toUpperCase() + c.status.slice(1)}</span></td>
+        <td>${formatDate(c.created_at)}</td>
+      </tr>`).join('')}</tbody>
+    </table>`
+  }
+
+  // Payout form
+  document.getElementById('payoutForm').addEventListener('submit', async e => {
+    e.preventDefault()
+    const method = document.getElementById('payoutMethod').value
+    const holderName = document.getElementById('payoutName').value.trim()
+    const account = document.getElementById('payoutAccount').value.trim()
+
+    const alertEl = document.getElementById('payoutAlert')
+
+    if (!holderName || !account) {
+      alertEl.style.display = 'block'
+      alertEl.style.background = '#fef2f2'
+      alertEl.style.border = '1px solid #fecaca'
+      alertEl.style.color = '#dc2626'
+      alertEl.textContent = 'Please fill in all fields.'
+      return
+    }
+
+    const token = getToken()
+    const res = await fetch('/api/affiliate/payout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+      body: JSON.stringify({ method, holderName, account }),
+    })
+
+    if (res.ok) {
+      alertEl.style.display = 'block'
+      alertEl.style.background = '#f0fdf4'
+      alertEl.style.border = '1px solid #bbf7d0'
+      alertEl.style.color = '#16a34a'
+      alertEl.textContent = 'Payout info saved!'
+    } else {
+      alertEl.style.display = 'block'
+      alertEl.style.background = '#fef2f2'
+      alertEl.style.border = '1px solid #fecaca'
+      alertEl.style.color = '#dc2626'
+      alertEl.textContent = 'Failed to save. Please try again.'
+    }
+  })
+
+  // Load dashboard data
+  async function loadDashboard() {
+    const token = getToken()
+    if (!token) { logout(); return }
+
+    const data = await apiFetch(`${API_BASE}/me`)
+    if (!data) return
+
+    const { affiliate, stats, clients, commissions } = data
+
+    // Sidebar
+    document.getElementById('userAvatar').textContent = affiliate.name.charAt(0).toUpperCase()
+    document.getElementById('userName').textContent = affiliate.name
+    document.getElementById('userPlan').textContent = planLabel(affiliate.plan)
+
+    // Header
+    document.getElementById('tierSubtitle').textContent =
+      `Your referral link is active · ${stats.currentRate}% commission on every active client`
+    document.getElementById('tierChip').innerHTML = tierChipHtml(stats.currentTier, affiliate.plan)
+
+    // Stats
+    document.getElementById('statClicks').textContent = stats.totalClicks
+    document.getElementById('statConversions').textContent = stats.totalConversions
+    document.getElementById('statThisMonth').textContent = formatCurrency(stats.thisMonthEarnings)
+    document.getElementById('statPending').textContent = formatCurrency(stats.pendingPayout)
+
+    // Referral link
+    const refLink = `${window.location.origin}/ref/${affiliate.slug}`
+    document.getElementById('refLink').value = refLink
+    document.getElementById('commRateBadge').textContent = `${stats.currentRate}% commission`
+
+    // Tables
+    renderClientsTable(clients)
+    renderCommissionsTable(commissions)
+
+    // Payout info prefill
+    if (affiliate.payout_info) {
+      const pi = affiliate.payout_info
+      if (pi.method) document.getElementById('payoutMethod').value = pi.method
+      if (pi.holderName) document.getElementById('payoutName').value = pi.holderName
+      if (pi.account) document.getElementById('payoutAccount').value = pi.account
+    }
+  }
+
+  loadDashboard()
+</script>
+</body>
+</html>
