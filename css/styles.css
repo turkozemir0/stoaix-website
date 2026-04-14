@@ -796,7 +796,10 @@ ul { list-style: none; }
 @keyframes marquee-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 
 .logo-pill {
-  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--r-full);
@@ -807,6 +810,13 @@ ul { list-style: none; }
   box-shadow: var(--shadow-sm);
 }
 .logo-pill-dim { opacity: 0.6; }
+.pill-logo {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 3px;
+}
 
 
 /* ═══════════════════════════════════════════════════════════
