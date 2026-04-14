@@ -1558,7 +1558,12 @@ ul { list-style: none; }
    ═══════════════════════════════════════════════════════════ */
 .pricing-section {
   padding: 100px 0;
-  background: var(--bg);
+  background:
+    radial-gradient(ellipse 90% 65% at 10% 20%, rgba(30, 58, 138, 0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 55% at 88% 10%, rgba(37, 99, 235, 0.14) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 50% 100%, rgba(59, 130, 246, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 25% 70%, rgba(99, 102, 241, 0.10) 0%, transparent 52%),
+    linear-gradient(160deg, #eef3ff 0%, #f5f8ff 45%, #eff6ff 100%);
 }
 
 .billing-toggle {
@@ -1696,6 +1701,14 @@ ul { list-style: none; }
   width: 14px; height: 14px;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none'%3E%3Ccircle cx='7' cy='7' r='7' fill='%232563eb' fill-opacity='.12'/%3E%3Cpath d='M4.5 7l2 2L9.5 5' stroke='%232563eb' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
   flex-shrink: 0;
+}
+.price-features li.inactive {
+  opacity: 0.35;
+  text-decoration: line-through;
+  text-decoration-color: var(--text-3);
+}
+.price-features li.inactive::before {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none'%3E%3Ccircle cx='7' cy='7' r='7' fill='%23cbd5e1' fill-opacity='.4'/%3E%3Cpath d='M4.5 7h5' stroke='%2394a3b8' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat;
 }
 
 .pricing-note {
