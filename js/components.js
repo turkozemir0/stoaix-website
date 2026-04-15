@@ -305,12 +305,9 @@
     // Pages without a navbar don't get one injected (auth/app pages)
 
     // ── Marquee ─────────────────────────────────────────────
-    const anchorEl = document.getElementById('site-marquee');
-    if (anchorEl) {
-      // Placeholder placed right after the hero — replace in-situ
-      replaceWithFragment(anchorEl, MARQUEE_HTML);
-    } else if (marqueeEl) {
-      // Already rendered (e.g. index.html) — replace to keep in sync
+    // Position is always hardcoded in HTML (after the hero section).
+    // JS only replaces the content to keep it in sync with this template.
+    if (marqueeEl) {
       replaceWithFragment(marqueeEl, MARQUEE_HTML);
     }
 
