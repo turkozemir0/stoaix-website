@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Partner Program — STOAIX | Earn Recurring Revenue Selling AI to Clinics</title>
-  <meta name="description" content="Join the STOAIX partner program. Sell AI automation to healthcare clinics in Turkey and the UK. Earn 10–40% recurring commission every month. White-label option available." />
+  <title>Partner Program — STOAIX | Earn Recurring Revenue Selling AI Automation</title>
+  <meta name="description" content="Join the STOAIX partner program. Sell AI automation to any business — clinics, real estate, e-commerce, and more. Earn 10–40% recurring commission. White-label option available." />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
   <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
@@ -52,15 +52,37 @@
       font-size: clamp(2.1rem, 5vw, 3.6rem);
       font-weight: 700;
       color: var(--text);
-      line-height: 1.15;
+      line-height: 1.2;
       letter-spacing: -0.02em;
       margin-bottom: 22px;
     }
-    .partner-h1 span {
-      background: linear-gradient(135deg, var(--blue) 0%, #7c3aed 100%);
+    /* Rotating industry words — reuses same pattern as index.html hero */
+    .partner-word-wrap {
+      position: relative;
+      display: inline-block;
+      vertical-align: bottom;
+    }
+    .partner-word {
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      white-space: nowrap;
+      background: linear-gradient(90deg, #2563eb 0%, #7c3aed 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+    }
+    .partner-word.active {
+      position: relative;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .partner-word.exit {
+      opacity: 0;
+      transform: translateY(-20px);
     }
     .partner-sub {
       font-size: 1.1rem;
@@ -853,10 +875,10 @@
         Partner Program — Now Open
       </div>
       <h1 class="partner-h1 reveal">
-        Build a recurring income stream<br />selling AI to <span>healthcare clinics.</span>
+        Earn recurring revenue selling AI to<br /><span class="partner-word-wrap"><span class="partner-word active">dental clinics.</span><span class="partner-word">real estate agencies.</span><span class="partner-word">e-commerce brands.</span><span class="partner-word">law firms.</span><span class="partner-word">beauty salons.</span><span class="partner-word">any business.</span></span>
       </h1>
       <p class="partner-sub reveal">
-        STOAIX is the AI platform that healthcare clinics use to automate patient calls, WhatsApp, and lead follow-up. We're expanding across Turkey and the UK — and we're looking for the right partners to grow with us. Earn 10–40% recurring commission every month, for as long as your clients stay active.
+        Every business needs AI automation — especially for customer communication, sales, and lead follow-up. Sell STOAIX to any of them and earn 10–40% recurring commission every month.
       </p>
       <div class="partner-hero-cta reveal">
         <a href="/partners/apply" class="btn-primary btn-lg">
@@ -895,8 +917,8 @@
         <div class="pstat-label">Cost to join —<br/>ever</div>
       </div>
       <div class="pstat">
-        <div class="pstat-value">2</div>
-        <div class="pstat-label">Active markets:<br/>Turkey & UK</div>
+        <div class="pstat-value">20+</div>
+        <div class="pstat-label">Pre-built AI<br/>workflows</div>
       </div>
       <div class="pstat">
         <div class="pstat-value">15+</div>
@@ -911,7 +933,7 @@
     <div class="psection-inner">
       <div class="psection-label reveal">Is this for you?</div>
       <h2 class="psection-h2 reveal">You already talk to the people who need this.</h2>
-      <p class="psection-desc reveal">You don't need to be an AI expert. You need to know businesses that are tired of missing leads, overwhelmed staff, and no-shows. If you work with or sell to these people — you're the right fit.</p>
+      <p class="psection-desc reveal">You don't need to be an AI expert. You need to know businesses that are tired of missing leads, slow follow-up, and manual customer communication. If you work with or sell to any type of business — you're the right fit.</p>
 
       <div class="persona-grid">
         <div class="persona-card reveal">
@@ -961,8 +983,8 @@
               <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
             </svg>
           </div>
-          <div class="persona-title">Medical Tourism Operators</div>
-          <div class="persona-desc">You work with international patients and clinics. STOAIX's multilingual AI (15+ languages) is built exactly for this. Turn your network into passive monthly income.</div>
+          <div class="persona-title">CRM & SaaS Resellers</div>
+          <div class="persona-desc">You already sell software to businesses. STOAIX is a natural add-on to any CRM, booking, or communication stack — and the recurring commission compounds fast.</div>
         </div>
 
         <div class="persona-card reveal">
@@ -972,19 +994,10 @@
             </svg>
           </div>
           <div class="persona-title">Business Coaches & Trainers</div>
-          <div class="persona-desc">Your clients are clinic owners or small business leaders. When you recommend STOAIX, you earn recurring commission — and add real, measurable value to every engagement.</div>
+          <div class="persona-desc">Your clients are small and mid-size business owners. When you recommend STOAIX, you earn recurring commission — and add real, measurable value to every engagement.</div>
         </div>
       </div>
 
-      <div class="opp-banner reveal">
-        <div class="opp-banner-text">
-          <h3>The market window is open right now.</h3>
-          <p>Most healthcare clinics in Turkey and the UK are still handling patient calls manually, missing leads after hours, and following up inconsistently. AI adoption in this sector is early — which means the partners who move now build the biggest recurring books. This is not a saturated market.</p>
-        </div>
-        <div class="opp-banner-cta">
-          <a href="/partners/apply" class="btn-primary btn-md">Apply Now</a>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -993,32 +1006,30 @@
   <section class="psection psection-alt">
     <div class="psection-inner">
       <div class="psection-label reveal">The product</div>
-      <h2 class="psection-h2 reveal">A complete AI platform — easy to explain, easier to sell.</h2>
-      <p class="psection-desc reveal">You don't need to explain the technology. You just show clinics what they're losing — and what STOAIX does about it.</p>
+      <h2 class="psection-h2 reveal">Every business has the same problem. STOAIX solves it.</h2>
+      <p class="psection-desc reveal">Across every industry — clinics, agencies, salons, e-commerce, real estate — businesses are losing revenue because customer communication, sales follow-up, and lead tracking are still manual. That's what you sell against.</p>
       <div class="ptype-grid">
 
         <div class="ptype-card reveal">
           <div class="ptype-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 18.5a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13Z"/>
-              <path d="M19.14 19.14 22 22M2 22l2.86-2.86"/>
-              <path d="M12 12v-2M12 8v-.5"/>
+              <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
             </svg>
           </div>
-          <div class="ptype-title">The problem clinics face</div>
-          <div class="ptype-desc">Patients call after hours and hear voicemail — they book elsewhere. WhatsApp messages go unanswered for hours. Follow-up after consultations is manual, inconsistent, or skipped entirely. Leads fall through the cracks every single day.</div>
+          <div class="ptype-title">The problem every business has</div>
+          <div class="ptype-desc">Calls go unanswered after hours. WhatsApp and website inquiries sit for hours with no reply. Leads that don't get followed up within minutes go cold — and convert elsewhere. Sales teams spend time on admin instead of closing.</div>
           <div class="ptype-items">
             <div class="ptype-item">
               <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
-              Missed calls = lost patients
+              Missed calls = lost revenue, every single day
             </div>
             <div class="ptype-item">
               <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
-              No-shows with no automated reminders
+              Slow WhatsApp & chat responses kill conversions
             </div>
             <div class="ptype-item">
               <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
-              International inquiries lost due to language barriers
+              Manual lead follow-up is inconsistent and incomplete
             </div>
           </div>
         </div>
@@ -1027,16 +1038,16 @@
           <div class="ptype-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
-          <div class="ptype-title">What STOAIX solves</div>
-          <div class="ptype-desc">One platform that answers every call 24/7 in the patient's language, responds instantly on WhatsApp and web chat, books appointments, chases no-shows, and nurtures every lead automatically.</div>
+          <div class="ptype-title">What STOAIX does for them</div>
+          <div class="ptype-desc">One AI platform that handles customer communication, sales, and follow-up across every channel — calls, WhatsApp, web chat — automatically, 24/7, in any language.</div>
           <div class="ptype-items">
             <div class="ptype-item">
               <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-              AI Voice: answers, qualifies & books patients 24/7
+              AI Voice: answers every call, qualifies, and books 24/7
             </div>
             <div class="ptype-item">
               <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-              WhatsApp & Web Chat: instant replies, automated follow-up
+              WhatsApp & Web Chat: instant replies and automated follow-up
             </div>
             <div class="ptype-item">
               <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
@@ -1044,8 +1055,69 @@
             </div>
             <div class="ptype-item">
               <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-              15+ languages — native support for international patients
+              15+ languages — works for international customers too
             </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ NO NEED TO LEARN OTHER TOOLS ═══ -->
+  <section class="psection">
+    <div class="psection-inner">
+      <div class="psection-label reveal">Why STOAIX is different to sell</div>
+      <h2 class="psection-h2 reveal">You don't need to learn N8N, VAPI, or any other tool. We've already built it.</h2>
+      <p class="psection-desc reveal">Most AI automation requires stitching together 4–6 different platforms, writing code, and maintaining it forever. With STOAIX, the infrastructure is done. You just sell the result.</p>
+      <div class="support-grid">
+
+        <div class="support-card reveal">
+          <div class="support-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+          <div>
+            <div class="support-title">20+ pre-built AI workflows, ready to deploy</div>
+            <div class="support-desc">We've identified the most in-demand automation workflows across industries — missed call recovery, lead follow-up, appointment reminders, re-engagement campaigns, and more. All built. All tested. You don't configure anything.</div>
+          </div>
+        </div>
+
+        <div class="support-card reveal">
+          <div class="support-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <div>
+            <div class="support-title">No VAPI, no GHL, no Make — one platform</div>
+            <div class="support-desc">Your clients don't need to sign up for 5 different tools or pay someone to integrate them. STOAIX is Voice AI, WhatsApp, Web Chat, CRM, and Pipeline — all in one. That's your selling point.</div>
+          </div>
+        </div>
+
+        <div class="support-card reveal">
+          <div class="support-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/>
+            </svg>
+          </div>
+          <div>
+            <div class="support-title">Live in under 5 minutes — no setup needed</div>
+            <div class="support-desc">You close the deal. We onboard the client. STOAIX goes live in minutes with no technical setup — which means clients see results immediately, stay longer, and you keep earning.</div>
+          </div>
+        </div>
+
+        <div class="support-card reveal">
+          <div class="support-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="support-title">We handle all support — you just refer</div>
+            <div class="support-desc">Technical questions, onboarding, troubleshooting — all handled by STOAIX. You're not a support agent. You make introductions and earn every month those clients stay active.</div>
           </div>
         </div>
 
@@ -1369,7 +1441,7 @@
     <div class="psection-inner">
       <div class="psection-label reveal">Your competitive advantage</div>
       <h2 class="psection-h2 reveal">Your clients save $400–$600/month compared to building it themselves.</h2>
-      <p class="psection-desc reveal">When a clinic tries to piece together a comparable system — VAPI for voice, GoHighLevel for CRM, Make or N8N for automation — they spend $800–$1,000+/month and 2–4 weeks setting it up. STOAIX is $299–$499/month, live in minutes, no IT team required. That's not a hard pitch.</p>
+      <p class="psection-desc reveal">When a business tries to piece together a comparable system — VAPI for voice, GoHighLevel for CRM, Make or N8N for automation — they spend $800–$1,000+/month and 2–4 weeks setting it up. STOAIX is $299–$499/month, live in minutes, no IT team required. That's not a hard pitch.</p>
       <table class="compare-table">
         <thead>
           <tr>
@@ -1423,8 +1495,8 @@
   <!-- ═══ CTA ═══ -->
   <section class="partner-cta">
     <div class="partner-cta-inner">
-      <h2 class="partner-cta-h2">The right time to build a recurring AI business is right now.</h2>
-      <p class="partner-cta-sub">Healthcare clinics in Turkey and the UK are actively looking for AI solutions — and most haven't found a provider yet. Apply today, get your partner link within 24 hours, and start earning from your first referral.</p>
+      <h2 class="partner-cta-h2">Every business needs AI automation. You can be the one to bring it to them.</h2>
+      <p class="partner-cta-sub">Apply today, get your partner link within 24 hours, and start earning from your first referral. No setup, no technical work, no other tools to learn.</p>
       <div class="partner-cta-btns">
         <a href="/partners/apply" class="btn-white">
           Apply Now — It's Free
@@ -1512,5 +1584,23 @@
 
   <script defer src="js/main.js"></script>
   <script defer src="js/i18n.js"></script>
+  <script>
+    /* ─── Partner hero rotating industries ─── */
+    (function initPartnerWords() {
+      const words = document.querySelectorAll('.partner-word');
+      if (!words.length) return;
+      let current = 0;
+      const INTERVAL = 2200;
+      function next() {
+        const prev = current;
+        current = (current + 1) % words.length;
+        words[prev].classList.add('exit');
+        words[prev].classList.remove('active');
+        setTimeout(() => { words[prev].classList.remove('exit'); }, 450);
+        words[current].classList.add('active');
+      }
+      setInterval(next, INTERVAL);
+    })();
+  </script>
 </body>
 </html>
