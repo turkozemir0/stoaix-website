@@ -3,31 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Partner Program — STOAIX | Earn Recurring Revenue Selling AI Automation</title>
-  <meta name="description" content="Join the STOAIX partner program. Sell AI voice assistants and chatbots to any business. Earn 10–40% recurring commission. White-label option available." />
+  <title>Partner Program — STOAIX | Earn Recurring Revenue Selling AI to Clinics</title>
+  <meta name="description" content="Join the STOAIX partner program. Sell AI automation to healthcare clinics in Turkey and the UK. Earn 10–40% recurring commission every month. White-label option available." />
   <link rel="stylesheet" href="css/styles.css" />
-
-  <!-- Performance: preconnect to external origins -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
   <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
   <style>
+    /* ─── Override to match index.html typography exactly ─── */
+    .partner-page * {
+      font-family: var(--font);
+    }
 
     /* ─── Hero ─── */
     .partner-hero {
       position: relative;
       overflow: hidden;
-      padding: 120px 0 80px;
+      padding: 130px 0 90px;
       background:
-        radial-gradient(ellipse 70% 60% at 10% 20%, rgba(37,99,235,0.18) 0%, transparent 55%),
-        radial-gradient(ellipse 55% 50% at 90% 10%, rgba(124,58,237,0.14) 0%, transparent 50%),
-        radial-gradient(ellipse 50% 45% at 50% 100%, rgba(59,130,246,0.12) 0%, transparent 55%),
+        radial-gradient(ellipse 70% 60% at 10% 20%, rgba(37,99,235,0.15) 0%, transparent 55%),
+        radial-gradient(ellipse 55% 50% at 90% 10%, rgba(124,58,237,0.12) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 45% at 50% 100%, rgba(59,130,246,0.10) 0%, transparent 55%),
         #f5f8ff;
       text-align: center;
     }
     .partner-hero-inner {
       position: relative;
       z-index: 3;
-      max-width: 760px;
+      max-width: 800px;
       margin: 0 auto;
       padding: 0 24px;
     }
@@ -47,11 +49,12 @@
       margin-bottom: 28px;
     }
     .partner-h1 {
-      font-size: clamp(2rem, 5vw, 3.4rem);
-      font-weight: 800;
+      font-size: clamp(2.1rem, 5vw, 3.6rem);
+      font-weight: 700;
       color: var(--text);
       line-height: 1.15;
-      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+      margin-bottom: 22px;
     }
     .partner-h1 span {
       background: linear-gradient(135deg, var(--blue) 0%, #7c3aed 100%);
@@ -62,9 +65,9 @@
     .partner-sub {
       font-size: 1.1rem;
       color: var(--text-2);
-      line-height: 1.65;
+      line-height: 1.7;
       margin-bottom: 40px;
-      max-width: 580px;
+      max-width: 620px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -76,14 +79,24 @@
       flex-wrap: wrap;
     }
     .partner-hero-note {
-      margin-top: 16px;
+      margin-top: 18px;
       font-size: 0.82rem;
       color: var(--text-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .partner-hero-note span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
     }
 
     /* ─── Stats bar ─── */
     .partner-stats {
-      padding: 44px 0;
+      padding: 48px 0;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
       background: #fff;
@@ -102,25 +115,27 @@
     }
     .pstat:last-child { border-right: none; }
     .pstat-value {
-      font-size: 2rem;
-      font-weight: 800;
+      font-size: 2.2rem;
+      font-weight: 700;
       color: var(--blue);
       line-height: 1;
-      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
     }
     .pstat-label {
       font-size: 0.85rem;
       color: var(--text-2);
+      line-height: 1.4;
     }
 
     /* ─── Sections ─── */
     .psection {
-      padding: 80px 0;
+      padding: 88px 0;
     }
     .psection-alt {
       background:
-        radial-gradient(ellipse 60% 50% at 0% 50%, rgba(37,99,235,0.06) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 40% at 100% 50%, rgba(124,58,237,0.05) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 0% 50%, rgba(37,99,235,0.05) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 100% 50%, rgba(124,58,237,0.04) 0%, transparent 60%),
         var(--bg-2);
     }
     .psection-inner {
@@ -137,8 +152,8 @@
       margin-bottom: 12px;
     }
     .psection-h2 {
-      font-size: clamp(2rem, 3.5vw, 2.8rem);
-      font-weight: 800;
+      font-size: clamp(1.9rem, 3.5vw, 2.7rem);
+      font-weight: 700;
       color: var(--text);
       line-height: 1.15;
       letter-spacing: -0.02em;
@@ -147,9 +162,130 @@
     .psection-desc {
       font-size: 1rem;
       color: var(--text-2);
+      line-height: 1.7;
+      max-width: 600px;
+      margin-bottom: 52px;
+    }
+
+    /* ─── Persona cards (who it's for) ─── */
+    .persona-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+    .persona-card {
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 18px;
+      padding: 28px 24px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .persona-card:hover {
+      border-color: rgba(37,99,235,0.3);
+      box-shadow: 0 4px 20px rgba(37,99,235,0.08);
+    }
+    .persona-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(37,99,235,0.08);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      color: var(--blue);
+    }
+    .persona-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .persona-desc {
+      font-size: 0.875rem;
+      color: var(--text-2);
+      line-height: 1.6;
+    }
+
+    /* ─── Opportunity banner ─── */
+    .opp-banner {
+      background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(124,58,237,0.05) 100%);
+      border: 1.5px solid rgba(37,99,235,0.15);
+      border-radius: 20px;
+      padding: 40px 40px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: center;
+      margin-top: 64px;
+    }
+    .opp-banner-text h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
+    }
+    .opp-banner-text p {
+      font-size: 0.925rem;
+      color: var(--text-2);
       line-height: 1.65;
-      max-width: 580px;
-      margin-bottom: 48px;
+      max-width: 560px;
+    }
+    .opp-banner-cta {
+      flex-shrink: 0;
+    }
+
+    /* ─── Earnings calculator ─── */
+    .earnings-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+    .earn-card {
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 18px;
+      padding: 28px 24px;
+      text-align: center;
+    }
+    .earn-card--highlight {
+      border-color: var(--blue);
+      background: rgba(37,99,235,0.025);
+    }
+    .earn-scenario {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-2);
+      margin-bottom: 12px;
+    }
+    .earn-amount {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--blue);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .earn-freq {
+      font-size: 0.85rem;
+      color: var(--text-2);
+      margin-bottom: 16px;
+    }
+    .earn-breakdown {
+      font-size: 0.82rem;
+      color: var(--text-2);
+      line-height: 1.6;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      text-align: left;
+    }
+    .earn-breakdown strong {
+      color: var(--text);
     }
 
     /* ─── Partner type cards ─── */
@@ -162,39 +298,66 @@
       background: #fff;
       border: 1.5px solid var(--border);
       border-radius: 20px;
-      padding: 32px 28px;
+      padding: 36px 32px;
     }
     .ptype-card--featured {
       border-color: var(--blue);
       background: rgba(37,99,235,0.025);
     }
     .ptype-icon {
-      width: 44px;
-      height: 44px;
-      background: rgba(37,99,235,0.09);
-      border-radius: 12px;
+      width: 48px;
+      height: 48px;
+      background: rgba(37,99,235,0.08);
+      border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
       color: var(--blue);
     }
+    .ptype-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--blue);
+      background: rgba(37,99,235,0.09);
+      padding: 4px 10px;
+      border-radius: var(--r-full);
+      margin-bottom: 12px;
+    }
     .ptype-title {
-      font-size: 1.1rem;
-      font-weight: 800;
+      font-size: 1.25rem;
+      font-weight: 700;
       color: var(--text);
-      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
+    }
+    .ptype-commission {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--blue);
+      letter-spacing: -0.03em;
+      margin-bottom: 4px;
+    }
+    .ptype-commission-note {
+      font-size: 0.82rem;
+      color: var(--text-2);
+      margin-bottom: 20px;
     }
     .ptype-desc {
       font-size: 0.9rem;
       color: var(--text-2);
-      line-height: 1.6;
-      margin-bottom: 20px;
+      line-height: 1.65;
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
     }
     .ptype-items {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 10px;
     }
     .ptype-item {
       display: flex;
@@ -263,7 +426,7 @@
       border-bottom: 1px solid var(--border);
     }
     .tiers-table td {
-      padding: 16px 20px;
+      padding: 18px 20px;
       font-size: 0.9rem;
       color: var(--text);
       border-bottom: 1px solid var(--border);
@@ -278,12 +441,14 @@
     .tier-req {
       font-size: 0.78rem;
       color: var(--text-2);
-      margin-top: 2px;
+      margin-top: 4px;
+      line-height: 1.5;
     }
     .tier-pct {
-      font-size: 1.1rem;
-      font-weight: 800;
+      font-size: 1.3rem;
+      font-weight: 700;
       color: var(--blue);
+      letter-spacing: -0.02em;
     }
     .tier-cap {
       font-size: 0.78rem;
@@ -296,6 +461,7 @@
       border-radius: var(--r-full);
       font-size: 0.72rem;
       font-weight: 700;
+      margin-left: 6px;
     }
     .tag-blue   { background: rgba(37,99,235,0.1); color: var(--blue); }
     .tag-purple { background: rgba(124,58,237,0.1); color: #7c3aed; }
@@ -306,134 +472,162 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 32px;
-      margin-top: 48px;
+      margin-top: 52px;
+      position: relative;
+    }
+    .steps-grid::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(33.33% - 0px);
+      right: calc(33.33% - 0px);
+      height: 1px;
+      background: var(--border);
     }
     .step-card {
       background: #fff;
       border: 1.5px solid var(--border);
       border-radius: 20px;
       padding: 32px 28px;
+      position: relative;
     }
     .step-num {
-      width: 40px;
-      height: 40px;
-      background: rgba(37,99,235,0.09);
+      width: 44px;
+      height: 44px;
+      background: var(--blue);
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1rem;
-      font-weight: 800;
-      color: var(--blue);
-      margin-bottom: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 18px;
     }
     .step-title {
-      font-size: 1rem;
+      font-size: 1.05rem;
       font-weight: 700;
       color: var(--text);
-      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
     }
     .step-desc {
       font-size: 0.875rem;
       color: var(--text-2);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
-    /* ─── Training cards ─── */
-    .training-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      margin-top: 48px;
-    }
-    .training-card {
-      background: #fff;
-      border: 1.5px solid var(--border);
-      border-radius: 16px;
-      padding: 24px 20px;
-    }
-    .training-card--featured {
-      border-color: var(--blue);
-      background: rgba(37,99,235,0.025);
-    }
-    .training-price {
-      font-size: 1.3rem;
-      font-weight: 800;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-    .training-tier {
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--blue);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 14px;
-    }
-    .training-cap-label {
-      font-size: 0.78rem;
-      color: var(--text-2);
-      margin-bottom: 2px;
-    }
-    .training-cap-value {
-      font-size: 1rem;
-      font-weight: 800;
-      color: var(--blue);
-      margin-bottom: 16px;
-    }
-    .training-items {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .training-item {
-      font-size: 0.82rem;
-      color: var(--text-2);
-      display: flex;
-      align-items: flex-start;
-      gap: 6px;
-    }
-    .training-item::before {
-      content: "✓";
-      color: var(--blue);
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-
-    /* ─── Bonus system ─── */
-    .bonus-grid {
+    /* ─── Support & resources ─── */
+    .support-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
       margin-top: 48px;
     }
-    .bonus-card {
+    .support-card {
       background: #fff;
       border: 1.5px solid var(--border);
       border-radius: 16px;
       padding: 28px 24px;
       display: flex;
-      gap: 16px;
+      gap: 18px;
     }
-    .bonus-icon {
-      font-size: 1.5rem;
+    .support-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(37,99,235,0.08);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
+      color: var(--blue);
     }
-    .bonus-title {
+    .support-title {
       font-size: 0.95rem;
       font-weight: 700;
       color: var(--text);
       margin-bottom: 6px;
     }
-    .bonus-desc {
+    .support-desc {
       font-size: 0.85rem;
       color: var(--text-2);
-      line-height: 1.55;
+      line-height: 1.6;
+    }
+
+    /* ─── White label packages ─── */
+    .wl-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 0;
+    }
+    .wl-card {
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 32px;
+    }
+    .wl-card--featured {
+      border-color: var(--blue);
+      background: rgba(37,99,235,0.025);
+    }
+    .wl-price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.03em;
+      margin-bottom: 4px;
+    }
+    .wl-price-note {
+      font-size: 0.82rem;
+      color: var(--text-2);
+      margin-bottom: 8px;
+    }
+    .wl-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
+    }
+    .wl-desc {
+      font-size: 0.9rem;
+      color: var(--text-2);
+      line-height: 1.65;
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .wl-items {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .wl-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.875rem;
+      color: var(--text-2);
+    }
+    .wl-item-dot {
+      width: 18px;
+      height: 18px;
+      background: rgba(37,99,235,0.09);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+      color: var(--blue);
     }
 
     /* ─── Final CTA section ─── */
     .partner-cta {
-      padding: 100px 0;
+      padding: 110px 0;
       background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 45%, #4f46e5 100%);
       text-align: center;
       position: relative;
@@ -443,28 +637,29 @@
       content: '';
       position: absolute;
       inset: 0;
-      background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
+      background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
       background-size: 36px 36px;
     }
     .partner-cta-inner {
       position: relative;
       z-index: 1;
-      max-width: 640px;
+      max-width: 680px;
       margin: 0 auto;
       padding: 0 24px;
     }
     .partner-cta-h2 {
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      font-weight: 800;
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 700;
       color: #fff;
       line-height: 1.2;
-      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+      margin-bottom: 18px;
     }
     .partner-cta-sub {
       font-size: 1rem;
       color: rgba(255,255,255,0.75);
-      line-height: 1.65;
-      margin-bottom: 40px;
+      line-height: 1.7;
+      margin-bottom: 44px;
     }
     .partner-cta-btns {
       display: flex;
@@ -477,7 +672,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 14px 28px;
+      padding: 14px 30px;
       background: #fff;
       color: var(--blue);
       border-radius: 10px;
@@ -486,7 +681,7 @@
       text-decoration: none;
       transition: transform 0.15s, box-shadow 0.15s;
     }
-    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.18); }
     .btn-outline-white {
       display: inline-flex;
       align-items: center;
@@ -494,31 +689,42 @@
       padding: 14px 28px;
       background: transparent;
       color: #fff;
-      border: 2px solid rgba(255,255,255,0.4);
+      border: 2px solid rgba(255,255,255,0.35);
       border-radius: 10px;
       font-size: 0.95rem;
       font-weight: 700;
       text-decoration: none;
       transition: border-color 0.15s, background 0.15s;
     }
-    .btn-outline-white:hover { border-color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.07); }
+    .btn-outline-white:hover { border-color: rgba(255,255,255,0.75); background: rgba(255,255,255,0.07); }
+    .cta-trust {
+      margin-top: 24px;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+    }
 
+    /* ─── Responsive ─── */
+    @media (max-width: 1024px) {
+      .persona-grid { grid-template-columns: repeat(2, 1fr); }
+      .earnings-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
+    }
     @media (max-width: 900px) {
       .partner-stats-inner { grid-template-columns: repeat(2, 1fr); }
       .pstat { border-right: none; border-bottom: 1px solid var(--border); padding: 20px 0; }
       .pstat:nth-child(even) { border-bottom: none; }
-      .ptype-grid { grid-template-columns: 1fr; }
+      .ptype-grid, .wl-grid { grid-template-columns: 1fr; }
       .steps-grid { grid-template-columns: 1fr; }
-      .bonus-grid { grid-template-columns: 1fr; }
-      .training-grid { grid-template-columns: repeat(2, 1fr); }
+      .support-grid { grid-template-columns: 1fr; }
+      .persona-grid { grid-template-columns: 1fr; }
+      .opp-banner { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
-      .training-grid { grid-template-columns: 1fr 1fr; }
       .tiers-table th, .tiers-table td { padding: 12px 14px; font-size: 0.82rem; }
+      .earnings-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
-<body>
+<body class="partner-page">
 
   <!-- Nav -->
   <nav class="navbar" id="navbar">
@@ -608,7 +814,7 @@
                 </span>
                 <div>
                   <div class="dropdown-title">Partner Program</div>
-                  <div class="dropdown-desc">Earn up to 50% recurring commission</div>
+                  <div class="dropdown-desc">Earn up to 40% recurring commission</div>
                 </div>
               </a>
             </div>
@@ -647,19 +853,32 @@
         Partner Program — Now Open
       </div>
       <h1 class="partner-h1 reveal">
-        Sell AI automation.<br /><span>Earn recurring revenue.</span>
+        Build a recurring income stream<br />selling AI to <span>healthcare clinics.</span>
       </h1>
       <p class="partner-sub reveal">
-        Refer clients or go white-label. Earn up to 40% recurring commission on every active client — no technical background required.
+        STOAIX is the AI platform that healthcare clinics use to automate patient calls, WhatsApp, and lead follow-up. We're expanding across Turkey and the UK — and we're looking for the right partners to grow with us. Earn 10–40% recurring commission every month, for as long as your clients stay active.
       </p>
       <div class="partner-hero-cta reveal">
         <a href="/partners/apply" class="btn-primary btn-lg">
           Apply to Partner Program
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <a href="#tiers" class="btn-outline btn-lg">See commission tiers</a>
+        <a href="#how-it-works" class="btn-outline btn-lg">See how it works</a>
       </div>
-      <p class="partner-hero-note reveal">$0 to join · No technical skills required · Recurring commissions</p>
+      <div class="partner-hero-note reveal">
+        <span>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Free to join
+        </span>
+        <span>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          No technical skills needed
+        </span>
+        <span>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Commission paid every month
+        </span>
+      </div>
     </div>
   </section>
 
@@ -669,80 +888,163 @@
     <div class="partner-stats-inner">
       <div class="pstat">
         <div class="pstat-value">40%</div>
-        <div class="pstat-label">Max recurring commission</div>
-      </div>
-      <div class="pstat">
-        <div class="pstat-value">3</div>
-        <div class="pstat-label">Affiliate tiers</div>
+        <div class="pstat-label">Max recurring<br/>commission</div>
       </div>
       <div class="pstat">
         <div class="pstat-value">$0</div>
-        <div class="pstat-label">Cost to join</div>
+        <div class="pstat-label">Cost to join —<br/>ever</div>
+      </div>
+      <div class="pstat">
+        <div class="pstat-value">2</div>
+        <div class="pstat-label">Active markets:<br/>Turkey & UK</div>
       </div>
       <div class="pstat">
         <div class="pstat-value">15+</div>
-        <div class="pstat-label">Languages supported</div>
+        <div class="pstat-label">Languages<br/>supported</div>
       </div>
     </div>
   </div>
 
 
-  <!-- ═══ WHO IS IT FOR ═══ -->
+  <!-- ═══ WHO IS THIS FOR ═══ -->
   <section class="psection" id="who">
     <div class="psection-inner">
-      <div class="psection-label reveal">Who it's for</div>
-      <h2 class="psection-h2 reveal">Two ways to partner with STOAIX</h2>
-      <p class="psection-desc reveal">Whether you want to refer clients casually or build a full AI agency business, there's a tier for you.</p>
+      <div class="psection-label reveal">Is this for you?</div>
+      <h2 class="psection-h2 reveal">You already talk to the people who need this.</h2>
+      <p class="psection-desc reveal">You don't need to be an AI expert. You need to know businesses that are tired of missing leads, overwhelmed staff, and no-shows. If you work with or sell to these people — you're the right fit.</p>
+
+      <div class="persona-grid">
+        <div class="persona-card reveal">
+          <div class="persona-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            </svg>
+          </div>
+          <div class="persona-title">Digital Marketing Agencies</div>
+          <div class="persona-desc">You already manage clinics' ads and SEO. Add AI automation to your service stack — and earn 40% recurring on every client you bring in.</div>
+        </div>
+
+        <div class="persona-card reveal">
+          <div class="persona-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div class="persona-title">Healthcare Consultants</div>
+          <div class="persona-desc">You advise clinics on operations, growth, and efficiency. STOAIX is the tool they need — and you already have the trust to recommend it.</div>
+        </div>
+
+        <div class="persona-card reveal">
+          <div class="persona-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <div class="persona-title">Tech & AI Freelancers</div>
+          <div class="persona-desc">Stop building one-off projects. Resell STOAIX under your own brand and earn passively from a growing client base instead of project-by-project.</div>
+        </div>
+
+        <div class="persona-card reveal">
+          <div class="persona-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <div class="persona-title">Sales Professionals</div>
+          <div class="persona-desc">You're comfortable closing deals. STOAIX gives you a compelling, proven product to sell with a recurring commission structure that rewards every close — forever.</div>
+        </div>
+
+        <div class="persona-card reveal">
+          <div class="persona-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+          </div>
+          <div class="persona-title">Medical Tourism Operators</div>
+          <div class="persona-desc">You work with international patients and clinics. STOAIX's multilingual AI (15+ languages) is built exactly for this. Turn your network into passive monthly income.</div>
+        </div>
+
+        <div class="persona-card reveal">
+          <div class="persona-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+            </svg>
+          </div>
+          <div class="persona-title">Business Coaches & Trainers</div>
+          <div class="persona-desc">Your clients are clinic owners or small business leaders. When you recommend STOAIX, you earn recurring commission — and add real, measurable value to every engagement.</div>
+        </div>
+      </div>
+
+      <div class="opp-banner reveal">
+        <div class="opp-banner-text">
+          <h3>The market window is open right now.</h3>
+          <p>Most healthcare clinics in Turkey and the UK are still handling patient calls manually, missing leads after hours, and following up inconsistently. AI adoption in this sector is early — which means the partners who move now build the biggest recurring books. This is not a saturated market.</p>
+        </div>
+        <div class="opp-banner-cta">
+          <a href="/partners/apply" class="btn-primary btn-md">Apply Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ WHAT YOU ACTUALLY SELL ═══ -->
+  <section class="psection psection-alt">
+    <div class="psection-inner">
+      <div class="psection-label reveal">The product</div>
+      <h2 class="psection-h2 reveal">A complete AI platform — easy to explain, easier to sell.</h2>
+      <p class="psection-desc reveal">You don't need to explain the technology. You just show clinics what they're losing — and what STOAIX does about it.</p>
       <div class="ptype-grid">
 
         <div class="ptype-card reveal">
           <div class="ptype-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 18.5a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13Z"/>
+              <path d="M19.14 19.14 22 22M2 22l2.86-2.86"/>
+              <path d="M12 12v-2M12 8v-.5"/>
+            </svg>
           </div>
-          <div class="ptype-title">Affiliate / Referral Partner</div>
-          <div class="ptype-desc">You have a network — clients, followers, or contacts who need AI automation. Refer them and earn recurring commission every month they stay.</div>
+          <div class="ptype-title">The problem clinics face</div>
+          <div class="ptype-desc">Patients call after hours and hear voicemail — they book elsewhere. WhatsApp messages go unanswered for hours. Follow-up after consultations is manual, inconsistent, or skipped entirely. Leads fall through the cracks every single day.</div>
           <div class="ptype-items">
             <div class="ptype-item">
-              <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-              Start earning from the very first referral
+              <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+              Missed calls = lost patients
             </div>
             <div class="ptype-item">
-              <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-              10–30% recurring commission (rises with active clients)
+              <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+              No-shows with no automated reminders
             </div>
             <div class="ptype-item">
-              <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-              STOAIX handles all onboarding and support
-            </div>
-            <div class="ptype-item">
-              <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-              Great for: consultants, coaches, business networks
+              <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+              International inquiries lost due to language barriers
             </div>
           </div>
         </div>
 
         <div class="ptype-card ptype-card--featured reveal">
           <div class="ptype-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
-          <div class="ptype-title">Agency / White-Label Partner</div>
-          <div class="ptype-desc">Build your own AI agency on top of STOAIX infrastructure. Sell under your brand, manage multiple clients from one dashboard, keep the margin.</div>
+          <div class="ptype-title">What STOAIX solves</div>
+          <div class="ptype-desc">One platform that answers every call 24/7 in the patient's language, responds instantly on WhatsApp and web chat, books appointments, chases no-shows, and nurtures every lead automatically.</div>
           <div class="ptype-items">
             <div class="ptype-item">
               <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-              40% recurring commission on every active client
+              AI Voice: answers, qualifies & books patients 24/7
             </div>
             <div class="ptype-item">
               <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-              White-label: your logo, your domain, your brand
+              WhatsApp & Web Chat: instant replies, automated follow-up
             </div>
             <div class="ptype-item">
               <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-              One-time setup fee — no ongoing platform cost
+              CRM & Pipeline: every lead scored, tracked, and nurtured
             </div>
             <div class="ptype-item">
               <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-              Great for: digital agencies, AI consultants, resellers
+              15+ languages — native support for international patients
             </div>
           </div>
         </div>
@@ -752,58 +1054,109 @@
   </section>
 
 
-  <!-- ═══ TOOL COST COMPARISON ═══ -->
+  <!-- ═══ EARNINGS ═══ -->
+  <section class="psection" id="earnings">
+    <div class="psection-inner">
+      <div class="psection-label reveal">What you earn</div>
+      <h2 class="psection-h2 reveal">Recurring. Every month. For as long as they stay.</h2>
+      <p class="psection-desc reveal">Unlike a one-time referral fee, your commission is paid every month your clients are active. Build a portfolio of 10–20 clients and you have a meaningful passive income — from introductions you've already made.</p>
+
+      <div class="earnings-grid">
+        <div class="earn-card reveal">
+          <div class="earn-scenario">3 Active Clients</div>
+          <div class="earn-amount">$269</div>
+          <div class="earn-freq">per month, recurring</div>
+          <div class="earn-breakdown">
+            3 clients × <strong>$299/mo</strong> plan × <strong>30%</strong> commission<br/>
+            Starter to Pro tier — automatic as you grow
+          </div>
+        </div>
+
+        <div class="earn-card earn-card--highlight reveal">
+          <div class="earn-scenario">10 Active Clients</div>
+          <div class="earn-amount">$897</div>
+          <div class="earn-freq">per month, recurring</div>
+          <div class="earn-breakdown">
+            10 clients × <strong>$299/mo</strong> plan × <strong>30%</strong> commission<br/>
+            Pro tier unlocked — tier adjusts automatically
+          </div>
+        </div>
+
+        <div class="earn-card reveal">
+          <div class="earn-scenario">White-Label: 15 Clients</div>
+          <div class="earn-amount">$1,794</div>
+          <div class="earn-freq">per month, recurring</div>
+          <div class="earn-breakdown">
+            15 clients × <strong>$299/mo</strong> × <strong>40%</strong> white-label rate<br/>
+            Sell under your own brand — you set the margin
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ TWO WAYS TO PARTNER ═══ -->
   <section class="psection psection-alt">
     <div class="psection-inner">
-      <div class="psection-label reveal">Why STOAIX</div>
-      <h2 class="psection-h2 reveal">Your clients save $400–$600/month vs. building it themselves</h2>
-      <p class="psection-desc reveal">The typical AI agency stack (VAPI + GHL + Make/N8N) costs $800–$1,000/mo and takes weeks to set up. STOAIX Agency is $499/mo — everything included, live in minutes.</p>
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th>Feature</th>
-            <th class="col-old">VAPI + GHL + Make/N8N</th>
-            <th class="col-stoaix">STOAIX Agency</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Monthly cost</td>
-            <td class="col-old">$800–$1,000+</td>
-            <td class="col-stoaix">$499/month</td>
-          </tr>
-          <tr>
-            <td>Voice AI</td>
-            <td class="col-old">VAPI — separate billing, usage caps</td>
-            <td class="col-stoaix">Included — inbound + outbound</td>
-          </tr>
-          <tr>
-            <td>WhatsApp + Web Chat</td>
-            <td class="col-old">Extra integration + cost</td>
-            <td class="col-stoaix">Included — same knowledge base</td>
-          </tr>
-          <tr>
-            <td>CRM + Pipeline</td>
-            <td class="col-old">GHL subscription required</td>
-            <td class="col-stoaix">Built-in — lead scoring + follow-up</td>
-          </tr>
-          <tr>
-            <td>Multi-client management</td>
-            <td class="col-old">Manual per-client setup</td>
-            <td class="col-stoaix">Reseller dashboard — one panel</td>
-          </tr>
-          <tr>
-            <td>Setup time</td>
-            <td class="col-old">2–4 weeks per client</td>
-            <td class="col-stoaix">Under 5 minutes — self-serve</td>
-          </tr>
-          <tr>
-            <td>Languages</td>
-            <td class="col-old">Manual prompt engineering</td>
-            <td class="col-stoaix">15+ languages — native support</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="psection-label reveal">Partnership types</div>
+      <h2 class="psection-h2 reveal">Two ways to work with us. You choose the level.</h2>
+      <p class="psection-desc reveal">Start as a referral partner and earn from day one. Or go white-label and sell the full platform under your brand. Both earn recurring commission — the difference is how involved you want to be.</p>
+      <div class="ptype-grid">
+
+        <div class="ptype-card reveal">
+          <div class="ptype-badge">Affiliate / Referral</div>
+          <div class="ptype-title">Refer clients. Earn passively.</div>
+          <div class="ptype-commission">10–30%</div>
+          <div class="ptype-commission-note">recurring monthly commission</div>
+          <div class="ptype-desc">You introduce STOAIX to businesses in your network. We handle the demo, onboarding, support, and everything technical. You get credited every month they stay active — automatically.</div>
+          <div class="ptype-items">
+            <div class="ptype-item">
+              <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              No technical knowledge required
+            </div>
+            <div class="ptype-item">
+              <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              STOAIX manages onboarding & support for every client
+            </div>
+            <div class="ptype-item">
+              <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              Commission rises automatically as your client base grows
+            </div>
+            <div class="ptype-item">
+              <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              Best for: consultants, coaches, sales professionals
+            </div>
+          </div>
+        </div>
+
+        <div class="ptype-card ptype-card--featured reveal">
+          <div class="ptype-badge">Agency / White-Label</div>
+          <div class="ptype-title">Sell it as your own product.</div>
+          <div class="ptype-commission">40%</div>
+          <div class="ptype-commission-note">recurring monthly commission — or set your own pricing</div>
+          <div class="ptype-desc">Run the full STOAIX platform under your brand. Your logo, your domain, your pricing. Manage multiple clinic clients from a single dashboard. You control the client relationship — we power the product.</div>
+          <div class="ptype-items">
+            <div class="ptype-item">
+              <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              Full white-label: your brand on every screen
+            </div>
+            <div class="ptype-item">
+              <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              Set your own pricing — earn the full margin above cost
+            </div>
+            <div class="ptype-item">
+              <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              Multi-client dashboard — manage everything in one place
+            </div>
+            <div class="ptype-item">
+              <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              Best for: digital agencies, AI consultants, tech resellers
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -812,44 +1165,44 @@
   <section class="psection" id="tiers">
     <div class="psection-inner">
       <div class="psection-label reveal">Commission structure</div>
-      <h2 class="psection-h2 reveal">3 tiers. Rises as your client base grows.</h2>
-      <p class="psection-desc reveal">Commission is recurring — you earn every month your referred clients stay active. Tier is based on your current active client count and adjusts dynamically.</p>
+      <h2 class="psection-h2 reveal">The more you grow, the more you earn.</h2>
+      <p class="psection-desc reveal">Your tier is based on active clients — it adjusts automatically as your book grows. There's no application or approval needed to move up. Every referral that stays active counts.</p>
       <table class="tiers-table">
         <thead>
           <tr>
             <th>Tier</th>
             <th>Commission</th>
             <th>Active clients</th>
-            <th>Notes</th>
+            <th>What changes</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>
               <div class="tier-name">Starter <span class="tier-tag tag-blue">Entry</span></div>
-              <div class="tier-req">Default tier — anyone can join</div>
+              <div class="tier-req">Open to everyone — start earning from client #1. No approval, no waiting.</div>
             </td>
             <td><div class="tier-pct">10%</div><div class="tier-cap">Recurring monthly</div></td>
-            <td>1–5 active clients</td>
-            <td>Sign up instantly, no approval needed</td>
+            <td>1–4 active clients</td>
+            <td>You get a referral link and partner dashboard immediately upon signing up.</td>
           </tr>
           <tr>
             <td>
               <div class="tier-name">Growth <span class="tier-tag tag-purple">Popular</span></div>
-              <div class="tier-req">Consistent referral track record</div>
+              <div class="tier-req">Automatically unlocked. No action needed from you.</div>
             </td>
             <td><div class="tier-pct">20%</div><div class="tier-cap">Recurring monthly</div></td>
-            <td>5–10 active clients</td>
-            <td>Tier auto-adjusts with active count</td>
+            <td>5–9 active clients</td>
+            <td>Commission rate upgrades automatically on all active clients — not just new ones.</td>
           </tr>
           <tr>
             <td>
               <div class="tier-name">Pro <span class="tier-tag tag-gold">Top Tier</span></div>
-              <div class="tier-req">High-volume affiliate partner</div>
+              <div class="tier-req">For high-volume partners building a serious book of business.</div>
             </td>
             <td><div class="tier-pct">30%</div><div class="tier-cap">Recurring monthly</div></td>
-            <td>10–20 active clients</td>
-            <td>Tier drops if active count falls</td>
+            <td>10+ active clients</td>
+            <td>At 10 clients on a $299 plan, you're earning $897/mo recurring — automatically.</td>
           </tr>
         </tbody>
       </table>
@@ -860,61 +1213,61 @@
   <!-- ═══ WHITE LABEL PACKAGES ═══ -->
   <section class="psection psection-alt" id="white-label">
     <div class="psection-inner">
-      <div class="psection-label reveal">White Label</div>
-      <h2 class="psection-h2 reveal">Sell STOAIX as your own product.</h2>
-      <p class="psection-desc reveal">Choose a white-label package and run the entire platform under your brand — your logo, your domain, your pricing. Earn 40% on every active client, every month.</p>
-      <div class="ptype-grid">
+      <div class="psection-label reveal">White-label packages</div>
+      <h2 class="psection-h2 reveal">Your brand. Our infrastructure. Their results.</h2>
+      <p class="psection-desc reveal">White-label partners earn 40% on every active client — or set your own pricing and keep even more. A one-time setup fee, no recurring platform cost. Pay once, earn forever.</p>
+      <div class="wl-grid">
 
-        <div class="ptype-card reveal">
-          <div class="ptype-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </div>
-          <div class="ptype-title">WL Basic — $997</div>
-          <div class="ptype-desc">Full white-label setup under your brand. One-time fee, no recurring platform cost. Earn 40% commission on every client you manage.</div>
-          <div class="ptype-items">
-            <div class="ptype-item">
-              <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-              Your logo, domain, and brand throughout
+        <div class="wl-card reveal">
+          <div class="wl-price">$997</div>
+          <div class="wl-price-note">one-time setup fee · no monthly platform cost</div>
+          <div class="wl-title">WL Basic — Full White-Label Access</div>
+          <div class="wl-desc">Everything you need to launch your own AI automation brand on top of STOAIX. Your logo, your domain, your client relationships. We configure the backend — you own the front.</div>
+          <div class="wl-items">
+            <div class="wl-item">
+              <div class="wl-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              Custom branding: logo, domain, and color scheme
             </div>
-            <div class="ptype-item">
-              <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="wl-item">
+              <div class="wl-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              Multi-client reseller dashboard
+            </div>
+            <div class="wl-item">
+              <div class="wl-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
               40% recurring commission on all active clients
             </div>
-            <div class="ptype-item">
-              <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-              Partner dashboard to track clients &amp; commissions
-            </div>
-            <div class="ptype-item">
-              <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-              Dedicated onboarding support
+            <div class="wl-item">
+              <div class="wl-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              Dedicated onboarding & technical support
             </div>
           </div>
+          <a href="/partners/apply?plan=wl-basic" class="btn-outline btn-md" style="width:100%;justify-content:center;">Apply for WL Basic</a>
         </div>
 
-        <div class="ptype-card ptype-card--featured reveal">
-          <div class="ptype-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <div class="ptype-title">WL Pro — $1,497</div>
-          <div class="ptype-desc">Everything in WL Basic plus a 4-session live sales training program. Learn how to close AI automation deals and build a repeatable pipeline.</div>
-          <div class="ptype-items">
-            <div class="ptype-item">
-              <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="wl-card wl-card--featured reveal">
+          <div class="wl-price">$1,497</div>
+          <div class="wl-price-note">one-time setup fee · includes sales training program</div>
+          <div class="wl-title">WL Pro — Full Access + Sales Training</div>
+          <div class="wl-desc">Everything in WL Basic, plus a structured 4-session live training program. Learn exactly how to pitch, demo, and close AI automation deals with healthcare clinics. Built for partners who want to move fast.</div>
+          <div class="wl-items">
+            <div class="wl-item">
+              <div class="wl-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
               Everything in WL Basic
             </div>
-            <div class="ptype-item">
-              <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-              4 live sales training sessions (1 month)
+            <div class="wl-item">
+              <div class="wl-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              4 live sales training sessions (over 1 month)
             </div>
-            <div class="ptype-item">
-              <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-              Discovery call &amp; closing frameworks
+            <div class="wl-item">
+              <div class="wl-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              Discovery call frameworks & objection handling
             </div>
-            <div class="ptype-item">
-              <div class="ptype-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-              40% recurring commission on all active clients
+            <div class="wl-item">
+              <div class="wl-item-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              Closing scripts tailored for healthcare clinic owners
             </div>
           </div>
+          <a href="/partners/apply?plan=wl-pro" class="btn-primary btn-md" style="width:100%;justify-content:center;">Apply for WL Pro</a>
         </div>
 
       </div>
@@ -923,28 +1276,146 @@
 
 
   <!-- ═══ HOW IT WORKS ═══ -->
-  <section class="psection">
+  <section class="psection" id="how-it-works">
     <div class="psection-inner">
       <div class="psection-label reveal">Process</div>
-      <h2 class="psection-h2 reveal">Three steps to your first commission</h2>
-      <p class="psection-desc reveal">No technical setup. No waiting. You find clients — we handle everything else.</p>
+      <h2 class="psection-h2 reveal">From application to first commission in days.</h2>
+      <p class="psection-desc reveal">We keep it simple. You focus on relationships and introductions — we handle everything else.</p>
       <div class="steps-grid">
         <div class="step-card reveal">
           <div class="step-num">1</div>
-          <div class="step-title">Sign up instantly</div>
-          <div class="step-desc">Fill in your details and your affiliate account is ready in minutes. You get a unique referral link and access to your partner dashboard immediately.</div>
+          <div class="step-title">Apply in 2 minutes</div>
+          <div class="step-desc">Fill in the short application form. Tell us a bit about your background and who you work with. Most applications are reviewed within 24 hours — your partner dashboard and referral link are ready immediately.</div>
         </div>
         <div class="step-card reveal">
           <div class="step-num">2</div>
-          <div class="step-title">Refer or sell</div>
-          <div class="step-desc">Share your link or run the sales call yourself. STOAIX handles onboarding, support, and technical setup — you just connect the client.</div>
+          <div class="step-title">Make the introduction</div>
+          <div class="step-desc">Share your unique referral link or introduce us directly. Not sure how to pitch it? We'll give you ready-to-use talking points, email templates, and a demo you can walk clients through yourself.</div>
         </div>
         <div class="step-card reveal">
           <div class="step-num">3</div>
           <div class="step-title">Earn every month</div>
-          <div class="step-desc">Commission is paid monthly, recurring for as long as the client stays active. The more active clients you have, the higher your tier and commission rate.</div>
+          <div class="step-desc">Once your referred client goes live, your commission starts. It's paid monthly for as long as they stay active — no caps, no expiry. The more active clients you have, the higher your tier and rate.</div>
         </div>
       </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ WHAT WE PROVIDE ═══ -->
+  <section class="psection psection-alt">
+    <div class="psection-inner">
+      <div class="psection-label reveal">Partner support</div>
+      <h2 class="psection-h2 reveal">You're not selling alone. We back every partner.</h2>
+      <p class="psection-desc reveal">We want you to succeed. That means giving you real resources — not just a referral link and a good-luck message.</p>
+      <div class="support-grid">
+
+        <div class="support-card reveal">
+          <div class="support-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <div>
+            <div class="support-title">Live partner dashboard</div>
+            <div class="support-desc">See every referred client, their status, and your commission breakdown in real time. Know exactly what you're earning and when it's paid.</div>
+          </div>
+        </div>
+
+        <div class="support-card reveal">
+          <div class="support-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+            </svg>
+          </div>
+          <div>
+            <div class="support-title">Sales & marketing materials</div>
+            <div class="support-desc">Ready-to-send email templates, pitch decks, demo scripts, and objection-handling guides — specifically written for selling to clinic owners.</div>
+          </div>
+        </div>
+
+        <div class="support-card reveal">
+          <div class="support-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="support-title">Direct partner support</div>
+            <div class="support-desc">A dedicated contact at STOAIX for any question you or your clients have. We don't disappear after you sign up — we stay in it with you.</div>
+          </div>
+        </div>
+
+        <div class="support-card reveal">
+          <div class="support-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="support-title">Fast onboarding for your clients</div>
+            <div class="support-desc">STOAIX is live in under 5 minutes. No weeks-long setup, no technical complexity. That's a real selling point — and it means your clients see results fast.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ WHY STOAIX IS EASY TO SELL ═══ -->
+  <section class="psection">
+    <div class="psection-inner">
+      <div class="psection-label reveal">Your competitive advantage</div>
+      <h2 class="psection-h2 reveal">Your clients save $400–$600/month compared to building it themselves.</h2>
+      <p class="psection-desc reveal">When a clinic tries to piece together a comparable system — VAPI for voice, GoHighLevel for CRM, Make or N8N for automation — they spend $800–$1,000+/month and 2–4 weeks setting it up. STOAIX is $299–$499/month, live in minutes, no IT team required. That's not a hard pitch.</p>
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="col-old">VAPI + GHL + Make / N8N</th>
+            <th class="col-stoaix">STOAIX — All Included</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Monthly cost</td>
+            <td class="col-old">$800–$1,000+</td>
+            <td class="col-stoaix">$299–$499/month</td>
+          </tr>
+          <tr>
+            <td>Voice AI (inbound + outbound)</td>
+            <td class="col-old">VAPI — separate billing, usage caps</td>
+            <td class="col-stoaix">Included — unlimited inbound</td>
+          </tr>
+          <tr>
+            <td>WhatsApp + Web Chat</td>
+            <td class="col-old">Separate integration + additional cost</td>
+            <td class="col-stoaix">Included — same knowledge base</td>
+          </tr>
+          <tr>
+            <td>CRM + Pipeline management</td>
+            <td class="col-old">GHL subscription required</td>
+            <td class="col-stoaix">Built-in — lead scoring + follow-up</td>
+          </tr>
+          <tr>
+            <td>Multi-client management</td>
+            <td class="col-old">Manual setup per client</td>
+            <td class="col-stoaix">Reseller dashboard — one panel</td>
+          </tr>
+          <tr>
+            <td>Time to go live</td>
+            <td class="col-old">2–4 weeks per client</td>
+            <td class="col-stoaix">Under 5 minutes — self-serve</td>
+          </tr>
+          <tr>
+            <td>Language support</td>
+            <td class="col-old">Manual prompt engineering per language</td>
+            <td class="col-stoaix">15+ languages — native support</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
@@ -952,15 +1423,16 @@
   <!-- ═══ CTA ═══ -->
   <section class="partner-cta">
     <div class="partner-cta-inner">
-      <h2 class="partner-cta-h2">Ready to earn recurring revenue from AI?</h2>
-      <p class="partner-cta-sub">Sign up takes 2 minutes. Your referral link is ready instantly. Start earning the same day.</p>
+      <h2 class="partner-cta-h2">The right time to build a recurring AI business is right now.</h2>
+      <p class="partner-cta-sub">Healthcare clinics in Turkey and the UK are actively looking for AI solutions — and most haven't found a provider yet. Apply today, get your partner link within 24 hours, and start earning from your first referral.</p>
       <div class="partner-cta-btns">
         <a href="/partners/apply" class="btn-white">
-          Apply Now
+          Apply Now — It's Free
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <a href="mailto:hello@stoaix.com?subject=Partner%20Question" class="btn-outline-white">Ask a question</a>
+        <a href="mailto:hello@stoaix.com?subject=Partner%20Question" class="btn-outline-white">Ask us a question</a>
       </div>
+      <p class="cta-trust">$0 to join · No technical skills required · Commission paid monthly</p>
     </div>
   </section>
 
@@ -1039,6 +1511,6 @@
   </footer>
 
   <script defer src="js/main.js"></script>
-<script defer src="js/i18n.js"></script>
+  <script defer src="js/i18n.js"></script>
 </body>
 </html>
