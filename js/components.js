@@ -291,8 +291,8 @@
   }
 
   function init() {
-    const navEl    = document.getElementById('navbar');
-    const mobileEl = document.getElementById('mobileMenu');
+    const navEl     = document.getElementById('navbar');
+    const mobileEl  = document.getElementById('mobileMenu');
     const marqueeEl = document.querySelector('.marquee-section');
     const footerEl  = document.querySelector('footer.footer');
 
@@ -305,12 +305,13 @@
     // Pages without a navbar don't get one injected (auth/app pages)
 
     // ── Marquee ─────────────────────────────────────────────
-    if (marqueeEl) {
-      // Replace the existing marquee (keeps it in sync)
+    const anchorEl = document.getElementById('site-marquee');
+    if (anchorEl) {
+      // Placeholder placed right after the hero — replace in-situ
+      replaceWithFragment(anchorEl, MARQUEE_HTML);
+    } else if (marqueeEl) {
+      // Already rendered (e.g. index.html) — replace to keep in sync
       replaceWithFragment(marqueeEl, MARQUEE_HTML);
-    } else if (document.getElementById('mobileMenu')) {
-      // Inject marquee right after the mobile menu
-      document.getElementById('mobileMenu').insertAdjacentHTML('afterend', MARQUEE_HTML);
     }
 
     // ── Footer ──────────────────────────────────────────────
