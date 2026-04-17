@@ -763,6 +763,39 @@
       .hc-4col      { grid-template-columns: 1fr; }
       .hc-steps     { grid-template-columns: 1fr; }
     }
+
+    /* ── Hero rotating words (reuses hero-word / hero-word-wrap from styles.css) ── */
+    .hc-hero-h1 .hero-word-wrap { vertical-align: bottom; }
+
+    /* ── Hero sub language rotation ── */
+    .hc-lang-rotate {
+      display: inline-block;
+      position: relative;
+      vertical-align: baseline;
+    }
+    .hc-lang-word {
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      white-space: nowrap;
+      background: linear-gradient(90deg, #2563eb 0%, #7c3aed 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 600;
+    }
+    .hc-lang-word.active {
+      opacity: 1;
+      transform: translateY(0);
+      position: relative;
+    }
+    .hc-lang-word.exit {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
   </style>
 </head>
 <body>
@@ -892,13 +925,12 @@
         Built for healthcare clinics
       </div>
       <h1 class="hc-hero-h1 reveal">
-        Your AI receptionist,<br>
+        Your AI <span class="hero-word-wrap"><span class="hero-word active">receptionist</span><span class="hero-word">call center</span><span class="hero-word">sales agent</span><span class="hero-word">chatbot</span><span class="hero-word">voice agent</span><span class="hero-word">CRM</span></span>,<br>
         <span class="gradient-text">live in minutes.</span>
       </h1>
       <p class="hc-hero-sub reveal">
-        Answers every call 24/7 in Turkish, English, and Arabic.
-        Qualifies patients, books consultations, and follows up on cold leads —
-        all without a single meeting with us.
+        Answers every call 24/7. Qualifies patients, books consultations, and follows up on cold leads — all without a single meeting with us.<br>
+        Available in <span class="hc-lang-rotate"><span class="hc-lang-word active">Turkish</span><span class="hc-lang-word">English</span><span class="hc-lang-word">Arabic</span><span class="hc-lang-word">Russian</span><span class="hc-lang-word">German</span><span class="hc-lang-word">French</span><span class="hc-lang-word">Spanish</span><span class="hc-lang-word">Italian</span><span class="hc-lang-word">Dutch</span><span class="hc-lang-word">Portuguese</span><span class="hc-lang-word">Japanese</span><span class="hc-lang-word">Korean</span><span class="hc-lang-word">Chinese</span><span class="hc-lang-word">Hindi</span><span class="hc-lang-word">Polish</span></span> and more.
       </p>
       <div class="hc-hero-cta reveal">
         <a href="#trial" class="btn-primary btn-lg">
@@ -1561,6 +1593,21 @@
 
   <script defer src="/js/components.js"></script>
   <script defer src="/js/main.js"></script>
+  <script>
+    (function() {
+      var words = document.querySelectorAll('.hc-lang-word');
+      if (!words.length) return;
+      var current = 0;
+      setInterval(function() {
+        var prev = current;
+        current = (current + 1) % words.length;
+        words[prev].classList.add('exit');
+        words[prev].classList.remove('active');
+        setTimeout(function() { words[prev].classList.remove('exit'); }, 400);
+        words[current].classList.add('active');
+      }, 1600);
+    })();
+  </script>
   <script>
     document.querySelectorAll('.hc-faq-q').forEach(btn => {
       btn.addEventListener('click', () => {
